@@ -1,0 +1,35 @@
+.seti {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__wrapper {
+    margin: 0 -10px;
+  }
+
+  &__item {
+    transition: color 0.2s ease, background-color 0.2s ease;
+    margin: 0 10px 15px 10px;
+    padding: 10px 15px;
+    background: #F5F5FF;
+    text-decoration: none;
+    color: @colorBlack;
+    border-radius: 25px;
+    .fontBook(15px,15px);
+
+    &:hover {
+      background: @baseColor;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .seti {
+    &__item {
+      .fontBook(14px,15px);
+      margin: 0 5px 5px 5px;
+      padding: 5px 7px;
+    }
+  }
+}

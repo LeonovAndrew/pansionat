@@ -1,0 +1,106 @@
+.bx-pagination {
+	margin: 30px 0;
+}
+.bx-pagination .bx-pagination-container {
+	text-align: center;
+	position: relative;
+}
+.bx-pagination .bx-pagination-container ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: inline-block;
+}
+.bx-pagination .bx-pagination-container ul li {
+	display: inline-block;
+	margin: 0 2px 15px 2px;
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid #E4E4FC;
+
+	/*-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);*/
+	/*-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);*/
+	/*box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);*/
+
+}
+.bx-pagination .bx-pagination-container ul li span{
+    -webkit-transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+       -moz-transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    	-ms-transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    	 -o-transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    		transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+	background: #fff;
+	padding: 0 8px;
+	display: block;
+	height: 46px;
+	min-width: 46px;
+	line-height: 46px;
+	color: #444;
+	font-size: 16px;
+	/*border-radius: 3px;*/
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bx-pagination .bx-pagination-container ul li a {
+	text-decoration: none;
+	display: block;
+	/*border-radius: 3px;*/
+	height: 46px;
+	min-width: 46px;
+	line-height: 46px;
+	color: #444;
+	vertical-align: middle;
+}
+.bx-pagination .bx-pagination-container ul li a:hover span{
+	background: #F5F5FF;
+}
+.bx-pagination .bx-pagination-container ul li.bx-active span{
+	background: #4949E7;
+	border-color:#4949E7;
+	color: #fff;
+}
+.bx-pagination .bx-pagination-container ul li.bx-pag-all a span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-prev a span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-next a span {
+	background: #fff;
+	/*border: 2px solid #eff0f1;*/
+	line-height: 46px;
+	padding: 0 18px;
+	color: #444;
+}
+.bx-pagination .bx-pagination-container ul li.bx-pag-all span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-prev span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-next span{
+	color: #aab1b4;
+	background: #fff;
+	/*border: 2px solid #eff0f1;*/
+	line-height: 46px;
+	padding: 0 18px;
+}
+.bx-pagination .bx-pagination-container ul li.bx-pag-all a:hover span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-prev a:hover span,
+.bx-pagination .bx-pagination-container ul li.bx-pag-next a:hover span {
+	background: #F5F5FF;
+	border-color: #E4E4FC;
+	color: #000;
+}
+
+/*color schemes*/
+.bx-pagination.bx-green  .bx-pagination-container ul li.bx-active span{
+	background: #3bc915;
+	color: #fff;
+}
+.bx-pagination.bx-yellow  .bx-pagination-container ul li.bx-active span{
+	background: #F9A91D;
+	color: #fff;
+}
+.bx-pagination.bx-red  .bx-pagination-container ul li.bx-active span{
+	background: #E22B2B;
+	color: #fff;
+}
+.bx-pagination.bx-blue .bx-pagination-container ul li.bx-active span{
+	background: #663ab6;
+	color: #fff;
+}

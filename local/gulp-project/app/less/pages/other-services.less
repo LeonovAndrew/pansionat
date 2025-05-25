@@ -1,0 +1,505 @@
+
+.slide_news {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF5D3;
+    border-radius: 40px;
+}
+
+.slide_text {
+    margin-right: 70px;
+    margin-left: 70px;
+    max-width: 38%;
+}
+
+.news_ph3 {
+
+    font-family: Klein;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46.55px;
+    text-align: left;
+    color: #1A1A1A;
+}
+
+.news_slide_p {
+    font-family: Klein;
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.slide_button {
+    width: 168px;
+    height: 56px;
+    background-color: #FE4856;
+    border-radius: 5px;
+    border: 1px solid #FE4856;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.slide_button:hover {
+    background-color: #FFFFFF;
+    color: #FE4856;
+}
+
+.slide_img {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+.p_h3 {
+    font-family: TT Drugs;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.news_peculiarities {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.peculiarities_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 330px;
+}
+
+.peculiarities_item {
+    width: 380px;
+}
+
+.item_text {
+    background-color: #F3F9FE;
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+    max-width: 340px;
+    border-radius: 20px;
+    height: 236px;
+}
+
+.item_text_b{
+    font-family: Klein;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.item_text_p {
+    margin-bottom: 0px;
+    font-family: Klein;
+    font-size: 15px;
+    font-weight: 350;
+    line-height: 22px;
+    text-align: left;
+
+}
+
+.peculiarities_item img {
+    margin-bottom: -30px;
+}
+
+.peculiarities_p {
+    font-family: Klein;
+    font-size: 18px;
+    font-weight: 350;
+    line-height: 26px;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.news_services {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.services_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.services_item {
+    max-width: 20%;
+}
+
+.services_img_wrapper {
+    width: 72px;
+    height: 72px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow:1px 1px 10px 2px rgba(0, 0, 0, 0.1);
+
+}
+
+.services_img_wrapper img {
+    margin: auto;
+    display: block;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    max-width: 100%;
+    height: 44px;
+}
+
+.services_a_list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.services_a_list li {
+    margin-bottom: 7px;
+}
+
+.services_a_list a {
+    color: #4949E7;
+    text-decoration: none;
+}
+
+.news_form {
+    background-color: #F3F9FE;
+    border-radius: 40px;
+    padding: 60px 60px 40px 60px;
+    width: 91,5%;
+}
+
+.form_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_top img {
+    max-height: 106px;
+}
+
+.form_text {
+    max-width: 60%;
+}
+
+.form_text .news_ph3 {
+    margin-top: 0px;
+}
+
+.news_form_p {
+    font-family: Klein;
+    font-size: 22px;
+    font-weight: 350;
+    line-height: 34px;
+    text-align: left;
+}
+
+.news_ph4 {
+    font-family: TT Drugs;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.04px;
+    text-align: left;
+}
+
+.disease_list_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 80%;
+}
+
+.mobility_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 40%;
+}
+
+.disease_checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.disease_checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.disease_checkbox+label:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #E4E4FC;
+    border-radius: 6px;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #FFFFFF;
+}
+
+.disease_checkbox:checked+label::before {
+    border-color: #FE4856;
+    background-color: #FE4856;
+    background-image: url("img/check.svg");
+}
+
+.disease_checkbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #FE4856;
+}
+
+.mobility_list {
+    margin-bottom: 20px;
+}
+
+.mobility_radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.mobility_radio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.mobility_radio+label::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #E4E4FC;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #FFFFFF;
+}
+
+.mobility_radio:checked+label::before {
+
+    border: 1px solid #E4E4FC;
+    background-color: #FFFFFF;
+    background-image: url("img/check_radio.svg");
+}
+
+.news_form label {
+    font-family: Klein;
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 20.69px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form_send {
+    display: flex;
+    justify-content: space-between;
+    max-width: 91%;
+    margin: 0 auto;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    padding: 60px;
+}
+
+.form_send input {
+    width: 25%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #E4E4FC;
+    font-family: Klein;
+    font-size: 18px;
+    font-weight: 350;
+    line-height: 23.27px;
+    text-align: left;
+    color: #797998;
+}
+
+.form_button {
+    background-color: #FE4856;
+    width: 25%;
+    border: 1px solid #FE4856;
+    border-radius: 15px;
+    font-family: Klein;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.86px;
+    color: #FFFFFF;
+}
+
+.form_after {
+    font-family: Klein;
+    font-size: 15px;
+    font-weight: 350;
+    line-height: 19.39px;
+    text-align: center;
+    color: #797998;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .slide_news  {
+        max-width: 100%;
+    }
+
+    .slide_text {
+        width: 50%;
+        margin-left: 20px;
+        margin-right: 5px;
+    }
+
+    .slide_news button {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .slide_img {
+        width: 50%;
+    }
+
+    .slide_img img {
+        max-width: 100%;
+    }
+
+    .peculiarities_list {
+        flex-wrap: wrap;
+    }
+
+    .peculiarities_item:last-child {
+        margin: 0 auto;
+        margin-top: 320px;
+    }
+
+    .form_text {
+        max-width: 90%;
+    }
+
+    .disease_list_wrapper {
+        max-width: 100%;
+    }
+
+    .mobility_list {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide_news {
+        flex-direction: column-reverse;
+        max-width: 705px;
+        margin: 0 auto;
+    }
+
+    .slide_text {
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+
+    }
+
+    .slide_img {
+        width: 100%;
+    }
+
+    .peculiarities_item {
+        margin: 0 auto;
+        margin-bottom: 320px;
+    }
+
+    .peculiarities_item:last-child {
+        margin-top: 0px;
+    }
+
+    .services_list {
+        flex-wrap: wrap;
+    }
+
+    .services_item {
+        max-width: 40%;
+    }
+
+    .services_item {
+        margin-bottom: 20px;
+    }
+
+    .disease_list_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .disease_list {
+        width: 40%;
+    }
+
+    .mobility_list {
+        max-width: 90%;
+    }
+
+    .form_send {
+        flex-direction: column;
+    }
+
+    .form_send input {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .form_button {
+        width: 100%;
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news_peculiarities {
+        width: 96%;
+    }
+
+    .peculiarities_p {
+        max-width: 96%;
+    }
+
+    .services_item {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .services_img_wrapper {
+        margin: 0 auto;
+    }
+
+    .item_services_b {
+        text-align: center;
+    }
+
+    .item_services_p {
+        text-align: center;
+    }
+
+    .services_a_list {
+        text-align: center;
+    }
+
+}

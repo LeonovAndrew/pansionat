@@ -1,0 +1,190 @@
+[data-modal] {
+  cursor: pointer;
+}
+
+.modal_wrapper {
+  .tranz();
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  .modal {
+    //.box_shadow();
+    .tranz();
+    position: relative;
+    padding: 40px;
+    width: 450px;
+    margin: auto;
+    overflow-y: scroll;
+    max-height: 100%;
+    border-radius: 20px;
+    background: #fff;
+    max-width: 90%;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar { /* chrome based */
+      width: 0px; /* ширина scrollbar'a */
+      background: transparent; /* опционально */
+    }
+
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    .close {
+      .tranz();
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      height: 16px;
+      width: 16px;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    p.after, p.before {
+      .fontMedium(14px, 16px);
+      text-align: center;
+      color: #818181;
+    }
+
+    p.after {
+      padding-top: 15px;
+    }
+
+    p.before {
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      .fontMedium(27px, 32px);
+      margin: 0;
+      padding: 0 0 15px 0;
+      text-align: center;
+      color: #000;
+    }
+
+    h2 {
+      .fontMedium(20px, 24px);
+      text-align: center;
+    }
+
+    p.steps {
+      border-top: 1px solid #d7d7d7;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      padding-top: 4px;
+    }
+
+
+
+    form {
+      width: 100%;
+
+      .radio_button {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      input {
+        max-width: 100%;
+        margin-bottom: 20px;
+        //border: 2px solid #dcdcdc;
+        //background: #fff;
+        //border-radius: 5px;
+        width: 100%;
+
+
+        &.error {
+          border-color: red;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        height: 115px;
+      }
+
+      button {
+        width: 100%;
+        margin: 20px 0 10px 0;
+        cursor: pointer;
+      }
+    }
+
+    .success {
+      text-align: center;
+      color: #000 !important;
+      .fontRegular(16px, 22px);
+
+      img {
+        display: inline-block;
+        height: 115px;
+        width: 115px;
+      }
+
+      h1, .h1 {
+        .fontMedium(40px, 50px);
+        margin: 5px 0 20px 0;
+      }
+
+      p {
+        margin: 5px 0 10px 0;
+
+        &.get {
+          .fontRegular(18px, 24px);
+        }
+      }
+
+
+      .close_butt, .inline_button {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 15px 25px;
+        background: @baseColor;
+        border: 2px solid @baseColor;
+        border-radius: 12px;
+        color: #fff;
+        .fontMedium(16px, 24px);
+        cursor: pointer;
+
+        &:hover {
+          background: #fff;
+          color: @baseColor;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 480px) {
+  .modal_wrapper .modal {
+    padding: 40px 20px;
+  }
+}
+
+
+

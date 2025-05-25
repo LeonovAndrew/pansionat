@@ -1,0 +1,52 @@
+.copyright {
+  border-top: 1px solid rgb(87,87,116);
+  color: @baseColorAlpha;
+  padding: 15px 0;
+  font-size: 14px;
+  display: flex;
+
+  a {
+    color: @baseColorAlpha;
+    text-decoration: none;
+    padding: 0 7px;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .dev {
+    margin-right: auto;
+
+    svg {
+      display: inline-block;
+      height: 15px;
+      width: 26px;
+      vertical-align: sub;
+    }
+  }
+
+  &__wrapper {
+    background: @colorDark;
+  }
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 90px;
+
+    a {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Circe-Bold';
+    src: url('Circe-Bold.eot?#iefix') format('embedded-opentype'), url('Circe-Bold.woff') format('woff'), url('Circe-Bold.ttf') format('truetype'), url('Circe-Bold.svg#Circe-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe-ExtraBold';
+    src: url('Circe-ExtraBold.eot?#iefix') format('embedded-opentype'), url('Circe-ExtraBold.woff') format('woff'), url('Circe-ExtraBold.ttf') format('truetype'), url('Circe-ExtraBold.svg#Circe-ExtraBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe-ExtraLight';
+    src: url('Circe-ExtraLight.eot?#iefix') format('embedded-opentype'), url('Circe-ExtraLight.woff') format('woff'), url('Circe-ExtraLight.ttf') format('truetype'), url('Circe-ExtraLight.svg#Circe-ExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe-Light';
+    src: url('Circe-Light.eot?#iefix') format('embedded-opentype'), url('Circe-Light.woff') format('woff'), url('Circe-Light.ttf') format('truetype'), url('Circe-Light.svg#Circe-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe-Regular';
+    src: url('Circe-Regular.eot?#iefix') format('embedded-opentype'), url('Circe-Regular.woff') format('woff'), url('Circe-Regular.ttf') format('truetype'), url('Circe-Regular.svg#Circe-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe-Thin';
+    src: url('Circe-Thin.eot?#iefix') format('embedded-opentype'), url('Circe-Thin.woff') format('woff'), url('Circe-Thin.ttf') format('truetype'), url('Circe-Thin.svg#Circe-Thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-Bold';
+    src: url('CorsicaRamblerLX-Bold.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-Bold.woff') format('woff'), url('CorsicaRamblerLX-Bold.ttf') format('truetype'), url('CorsicaRamblerLX-Bold.svg#CorsicaRamblerLX-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-BoldIt';
+    src: url('CorsicaRamblerLX-BoldIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-BoldIt.woff') format('woff'), url('CorsicaRamblerLX-BoldIt.ttf') format('truetype'), url('CorsicaRamblerLX-BoldIt.svg#CorsicaRamblerLX-BoldIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-Book';
+    src: url('CorsicaRamblerLX-Book.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-Book.woff') format('woff'), url('CorsicaRamblerLX-Book.ttf') format('truetype'), url('CorsicaRamblerLX-Book.svg#CorsicaRamblerLX-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-BookIt';
+    src: url('CorsicaRamblerLX-BookIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-BookIt.woff') format('woff'), url('CorsicaRamblerLX-BookIt.ttf') format('truetype'), url('CorsicaRamblerLX-BookIt.svg#CorsicaRamblerLX-BookIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-Light';
+    src: url('CorsicaRamblerLX-Light.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-Light.woff') format('woff'), url('CorsicaRamblerLX-Light.ttf') format('truetype'), url('CorsicaRamblerLX-Light.svg#CorsicaRamblerLX-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-LightIt';
+    src: url('CorsicaRamblerLX-LightIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-LightIt.woff') format('woff'), url('CorsicaRamblerLX-LightIt.ttf') format('truetype'), url('CorsicaRamblerLX-LightIt.svg#CorsicaRamblerLX-LightIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-Medium';
+    src: url('CorsicaRamblerLX-Medium.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-Medium.woff') format('woff'), url('CorsicaRamblerLX-Medium.ttf') format('truetype'), url('CorsicaRamblerLX-Medium.svg#CorsicaRamblerLX-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-MediumIt';
+    src: url('CorsicaRamblerLX-MediumIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-MediumIt.woff') format('woff'), url('CorsicaRamblerLX-MediumIt.ttf') format('truetype'), url('CorsicaRamblerLX-MediumIt.svg#CorsicaRamblerLX-MediumIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-Regular';
+    src: url('CorsicaRamblerLX-Regular.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-Regular.woff') format('woff'), url('CorsicaRamblerLX-Regular.ttf') format('truetype'), url('CorsicaRamblerLX-Regular.svg#CorsicaRamblerLX-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-RegularIt';
+    src: url('CorsicaRamblerLX-RegularIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-RegularIt.woff') format('woff'), url('CorsicaRamblerLX-RegularIt.ttf') format('truetype'), url('CorsicaRamblerLX-RegularIt.svg#CorsicaRamblerLX-RegularIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-SemiBold';
+    src: url('CorsicaRamblerLX-SemiBold.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-SemiBold.woff') format('woff'), url('CorsicaRamblerLX-SemiBold.ttf') format('truetype'), url('CorsicaRamblerLX-SemiBold.svg#CorsicaRamblerLX-SemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorsicaRamblerLX-SemiBoldIt';
+    src: url('CorsicaRamblerLX-SemiBoldIt.eot?#iefix') format('embedded-opentype'), url('CorsicaRamblerLX-SemiBoldIt.woff') format('woff'), url('CorsicaRamblerLX-SemiBoldIt.ttf') format('truetype'), url('CorsicaRamblerLX-SemiBoldIt.svg#CorsicaRamblerLX-SemiBoldIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,107 @@
+.add-review {
+  margin: 40px 0;
+  background: #FFFFFF;
+  border: 1px solid #E4E4FC;
+  border-radius: 15px;
+  padding: 50px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__row-quarter {
+    width: 24%;
+  }
+
+  &__row-half {
+    width: 49%;
+  }
+
+  &__row-full {
+    width: 100%;
+  }
+
+  &__title {
+    .fontRegular(16px, 21px)
+  }
+
+
+  &__row-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  &__row-flex-item {
+    min-width: 100px;
+  }
+
+  &__sub-title {
+    .fontBook(14px, 18px)
+  }
+
+  &__row-actions {
+    display: flex;
+  }
+
+  button {
+    .inline-button();
+    align-self: flex-end;
+    margin-left: auto;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-review {
+    padding: 20px;
+
+    &__row {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    &__row-quarter {
+      width: 49%;
+    }
+
+    &__row-half {
+      width: 100%;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__row-full {
+      width: 100%;
+    }
+
+    &__row-flex {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__row-flex-item {
+     width: 49%;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    button {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.search {
+  border: 3px solid @baseColor;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__row {
+
+    &.__max {
+      flex: 1 1 150px;
+      border: none;
+      outline: none;
+      border-left: 1px solid #E4E4FC;
+      padding: 0 20px;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  select {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+  &__map-button {
+    color: @baseColor;
+    flex: 0 0 130px;
+    width: 130px;
+    border-radius: 30px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5FF;
+    margin-left: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background: #FE4856;
+      color: #fff;
+    }
+  }
+
+  &__button {
+    .fontMedium(18px, 24px);
+    padding: 22px 60px;
+    background: @baseColor;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      background: #FE4856;
+      color: #fff;
+    }
+  }
+
+  input {
+
+  }
+
+  select {
+
+  }
+}
+
+
+.select-wrapper {
+  position: relative;
+
+  select {
+    -webkit-appearance: none;
+    position: relative;
+    background: #fff;
+    color: @colorBlack;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    background: url("/local/templates/pansion2023/static/img/icons/chevron-small-down.svg") no-repeat center;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    &__form {
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+
+    &__row {
+      width: 100%;
+      margin-bottom: 10px;
+      //pad
+
+      &.__max {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 0;
+        border: none;
+      }
+
+      select {
+        border: 1px solid #E4E4FC;
+        padding: 12px;
+        border-radius: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+
+
+    &__map-button {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__button {
+      display: block;
+      width: 100%;
+      border-radius: 30px;
+      height: 50px;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.makeCalcButton {
+  padding: 18px 31px;
+  font-size: 22px;
+  background: @colorRed;
+  border-radius: 50px;
+  line-height: 24px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #ffffff;
+  z-index: 99;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: all;
+  box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.31);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    background: linear-gradient(90deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,.6) 100%);
+    width: 45px;
+    -webkit-transform: skewX(-22deg);
+    transform: skewX(-22deg);
+    left: -65%;
+    -webkit-animation-name: blick;
+    animation-name: blick;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+}
+
+@media (max-width: 768px) {
+  .makeCalcButton {
+    font-size: 18px;
+    padding: 12px 18px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 390px;
+    text-align: center;
+  }
+}
+
+@keyframes blick {
+  15%,to {
+    left: 110%
+  }
+}

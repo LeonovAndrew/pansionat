@@ -1,0 +1,254 @@
+
+
+.filter {
+  .tranz();
+  padding: 16px 30px;
+  background: #fff;
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  &.show {
+    border: 1px solid #E4E4FC;
+  }
+
+  .filter_block {
+    margin-bottom: 20px;
+
+    &.price {
+      margin-bottom: 40px;
+
+      .min-price-wrapper, .max-price-wrapper {
+        display: inline-block;
+        border: 2px solid #e8e8e8;
+        padding: 5px 12px;
+        width: 47%;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .min-price, .max-price {
+        border: none;
+
+      }
+
+      .min-price-wrapper {
+
+      }
+
+      .max-price-wrapper {
+        float: right;
+      }
+    }
+  }
+
+  .filter_title {
+    color: @colorBlack;
+    margin-bottom: 8px;
+    .fontBold(17px,21px);
+  }
+
+  .filter_values {
+    .tranz();
+    //max-height: 235px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+
+    &._open {
+      //max-height: 4000px;
+    }
+  }
+
+  .expand-more {
+    background: #fff;
+    height: 32px;
+    //position: absolute;
+    //left: 0;
+    //right: 0;
+    //bottom: 0;
+    text-decoration: none;
+    color: @baseColor;
+    cursor: pointer;
+    padding-top: 9px;
+    .fontRegular(15px,30px);
+    padding-left: 30px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .filter_val {
+    padding: 1px 0 1px 30px;
+    margin: 5px 0;
+    position: relative;
+    cursor: pointer;
+    .tranz();
+    max-height: 400px;
+    overflow: hidden;
+
+    a {
+      color: #141414;
+      text-decoration: none;
+      line-height: 18px;
+      display: inline-block;
+      height: 18px;
+      width: 100%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      label {
+        line-height: 18px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 3px;
+      font-size: 0.9em;
+      //color: #949494;
+    }
+
+    label {
+      padding-left: 0 !important;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.__close {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-height: 0;
+      margin:0;
+
+      &.__open {
+        margin: 5px 0;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        max-height: 400px;
+      }
+    }
+  }
+
+  .set_filter {
+    .inline-fiol-button();
+    display: block;
+    width: 100%;
+    //margin: 10px 0;
+  }
+
+  .clear_filter {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: #8a8a8a;
+    //font-family: @boldFont;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .price_inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .min-price-wrapper, .max-price-wrapper {
+      flex: 0 0 47%;
+      border: 1px solid #e8e8e8;
+      padding: 5px 12px;
+      border-radius: 3px;
+      width: 47%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      display: flex;
+
+      input {
+        margin-left: 5px;
+        display: inline-block;
+        padding: 0 !important;
+        box-sizing: border-box;
+      }
+    }
+
+    .min-price, .max-price {
+      border: none;
+      height: auto !important;
+      padding: 0 !important;
+    }
+
+    .min-price-wrapper {
+
+    }
+
+    .max-price-wrapper {
+    }
+  }
+}
+
+
+.bx-ui-slider-range {
+  position: relative;
+}
+
+.bx-ui-slider-track {
+  position: relative;
+}
+
+.bx-ui-slider-pricebar-vd {
+  height: 2px;
+  background: @baseColor;
+  position: absolute;
+  top: 8px;
+  z-index: 15;
+}
+
+.bx-ui-slider-pricebar-vn {
+  height: 2px;
+  background: #e8e8e8;
+  position: absolute;
+  top: 8px;
+  z-index: 5;
+}
+
+.bx-ui-slider-handle {
+  position: absolute;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background: @baseColor;
+  border-radius: 50%;
+}
+
+.bx-ui-slider-track-container {
+  margin-bottom: 45px;
+}
+
+
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+  .filter {
+    max-height: 0;
+    padding: 0;
+  }
+
+  .filter.show {
+    max-height: 20000px;
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+
+}

@@ -1,0 +1,94 @@
+.tabs_wrapper {
+  .buttons_wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0 0 25px 0;
+    padding: 0;
+
+    .tab_button {
+      color: @baseColor;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid @baseColor;
+      display: inline-block;
+      margin-right: 20px;
+      pointer-events: all;
+      cursor: pointer;
+      margin-bottom: 12px;
+
+      &.active {
+        color: #ffffff;
+        background: @baseColor;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .tabs_content {
+    min-height: 555px;
+    height: 555px;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
+    .tab {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+
+      .tranz(0.4s);
+      width: 0;
+      opacity: 0;
+
+      &.active {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.white {
+    .tab_button {
+      color: #ffffff;
+      border-color: #ffffff;
+
+      &.active {
+        background-color: #ffffff;
+        color: @baseColor;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .tab {
+    .item_wrapper:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs_wrapper {
+    .tabs_content {
+      min-height: 1090px;
+    }
+  }
+
+  .tab {
+    .item_wrapper:nth-child(4) {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs_wrapper {
+    .tabs_content {
+      min-height: 2180px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.cookie {
+  transition: all 0.6s ease;
+  position: fixed;
+  max-width: 800px;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: -190px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px 25px;
+  z-index: 200;
+
+  &._show {
+    bottom: 10px;
+  }
+
+  &__text {
+    flex: 1 1 100px;
+  }
+
+  &__button {
+    flex: 0 0 100px;
+    margin-left: 25px;
+    padding: 9px 48px;
+    border: 2px solid @baseColor;
+    border-radius: 4px;
+    color: @baseColor;
+    text-align: center;
+    line-height: 16px;
+
+    &:hover {
+      background: @baseColor;
+      color: #fff;
+    }
+  }
+}

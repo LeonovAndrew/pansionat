@@ -1,0 +1,25 @@
+.adaptive-link {
+  margin: 20px 0;
+  cursor: pointer;
+
+  &__big {
+    display: block;
+  }
+
+  &__small {
+    display: none;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .adaptive-link {
+    &__big {
+      display: none;
+    }
+
+    &__small {
+      display: block;
+    }
+  }
+}

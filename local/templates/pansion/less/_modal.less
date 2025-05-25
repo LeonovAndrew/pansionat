@@ -1,0 +1,131 @@
+
+.modal_wrapper {
+  .tranz();
+  display: none;
+  position: fixed;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  .modal {
+    position: relative;
+    padding: 40px;
+    width: 450px;
+    margin: auto;
+    overflow-y: scroll;
+    max-height: 100%;
+    .tranz();
+    .box_shodow();
+    background: url("/local/templates/pansion/img/modalbg.jpg") no-repeat left bottom, #f6efe7;
+    border-radius: 7px;
+
+    &.nobg {
+      background: #f6efe7;
+    }
+
+    &::-webkit-scrollbar { /* chrome based */
+      width: 0px; /* ширина scrollbar'a */
+      background: transparent; /* опционально */
+    }
+
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    p.after {
+      font-family: @boldFont;
+      font-size: 16px;
+      color: #7f7f7f;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    p.steps {
+      border-top: 1px solid #d7d7d7;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      padding-top: 4px;
+    }
+
+    h1 {
+      font-family: @boldFont;
+      font-size: 30px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    form {
+      width:  100%;
+
+      .radio_button {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      input {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      button {
+        width: 100%;
+        background: @baseColor;
+      }
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 115px;
+      }
+    }
+
+    .success {
+      text-align: center;
+
+      img {
+        display: inline-block;
+        height: 115px;
+        width: 115px;
+      }
+
+      h1 {
+        padding: 10px 0;
+      }
+
+      .close_butt {
+        display: inline-block;
+        padding: 20px 35px;
+        background: @baseColor;
+        border-radius: 3px;
+        color: #ffffff;
+        font-family: @boldFont;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background: #5f23a7;
+        }
+      }
+    }
+  }
+}

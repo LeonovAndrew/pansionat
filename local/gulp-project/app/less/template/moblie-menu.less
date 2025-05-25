@@ -1,0 +1,170 @@
+.mobile-menu {
+  transition: all 0.5s ease;
+  position: fixed;
+  top: 0;
+  max-height: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
+  //display: none;
+  flex-direction: column;
+  overflow: hidden;
+  //max-height: 0;
+
+  &.__show {
+    display: flex;
+    max-height: 100%;
+  }
+
+  &__header {
+    height: 50px;
+    flex: 0 0 50px;
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__links-wrapper {
+    height: 100%;
+    flex: 1 1 200px;
+    padding: 15px 35px;
+    overflow: scroll;
+  }
+
+  &__footer {
+    height: 160px;
+    flex: 0 0 160px;
+  }
+
+  &__footer-phone {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: #222530;
+      text-decoration: none;
+      .fontMedium(30px,44px);
+    }
+
+    span {
+      .fontMedium(15px,16px);
+      display: inline-block;
+      margin-left: 12px;
+      border-bottom: 1px solid @baseColor;
+    }
+  }
+
+  &__footer-button-wrapper {
+    padding: 22px 30px;
+  }
+
+  &__footer-button {
+    background: #F5F5FF;
+    border-radius: 40px;
+    color: @baseColor;
+    //height: 50px;
+    .fontRegular(18px,20px);
+    padding: 20px 0;
+    text-align: center;
+    max-width: 260px;
+    margin: auto;
+  }
+
+  &__footer-socials {
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #DAE0EA;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+
+      & + a {
+        margin-left: 12px;
+      }
+    }
+
+    img {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
+.mobile-menu {
+
+  a {
+    color: #222530;
+    text-decoration: none;
+    .fontRegular  (18px,22px);
+  }
+
+  &__links {
+
+  }
+
+  &__link {
+    display: block;
+    padding: 14px 0;
+    position: relative;
+
+    &.js-show-sub {
+      &:after {
+        transition: all 0.5s ease;
+        content: '';
+        display: block;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        background: url('/local/templates/main/img/chevron-down.svg') no-repeat center;
+        background-size: cover;
+        right: 0;
+        top: 15px;
+        margin: auto;
+      }
+    }
+
+    &.open {
+      ul {
+        max-height: 500px;
+      }
+
+      &.js-show-sub {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__sub-links {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 20px;
+  }
+
+  &__sub-link {
+    display: block;
+    padding: 10px 0;
+    position: relative;
+
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:last-child {
+      padding-bottom: 5px;
+    }
+
+    a {
+      .fontRegular(17px,22px);
+    }
+  }
+}

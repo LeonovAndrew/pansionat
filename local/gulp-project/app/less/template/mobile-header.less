@@ -1,0 +1,59 @@
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__wrapper {
+    background: @baseColor;
+    padding: 12px 0;
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+
+  &__logo {
+    flex: 1 1 100px;
+
+    svg {
+      height: 35px;
+      width: 175px;
+    }
+  }
+
+  &__phone {
+
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__phone-number {
+
+  }
+
+  &__search {
+    margin-left: 25px;
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__menu {
+    margin-left: 25px;
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    &__wrapper {
+      display: block;
+    }
+  }
+}

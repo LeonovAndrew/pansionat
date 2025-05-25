@@ -1,0 +1,59 @@
+.filter-element.filter-list__element.disabled {
+    opacity: .6;
+}
+.filter-element.filter-list__element {
+    display: flex;
+    gap: 10px;
+}
+.filter-element__count {
+    color: #9b9b9b;
+    padding-left: 10px;
+}
+.filter-item {
+    padding: 5px;
+}
+.filter-head.icon {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.icon::after {
+    content: "";
+    mask:  center center / contain no-repeat;
+    -webkit-mask: var(--icon) center center / contain no-repeat;
+
+    display: block;
+    transition: 0.25s;
+    background: #000;
+}
+.filter-head:after {
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    background: rgba(3, 3, 3, 0.5);
+}
+.filter-head.icon {
+    display: flex;
+    align-items: center;
+}
+.filter-item .filter-item__container{
+    display: none;
+}
+.filter-item.active .filter-item__container{
+    display: block;
+}
+.filter-element.filter-list__element {
+    display: flex;
+    gap: 10px;
+}
+.filter-element.filter-list__element {
+    padding: 3px 10px;
+}
+.filter-head.icon{
+    cursor: pointer;
+}
+.filter_tag_admin {
+    display: grid;
+    gap: 1px;
+    justify-content: center;
+}

@@ -1,0 +1,66 @@
+.tabs {
+
+  &__wrapper {
+    margin-bottom: 20px;
+    display: inline-flex;
+  }
+
+  &__button {
+    .tranz();
+    cursor: pointer;
+    border: 1px solid @baseColor;
+    color: @colorBlack;
+    margin: 0 10px 10px 0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    .fontBook(15px, 19px);
+
+    &.__active {
+      background: @baseColor;
+      color: #fff;
+
+    }
+  }
+
+  &__content-wrapper {
+    overflow: hidden;
+    margin: -30px;
+    padding: 30px;
+  }
+
+  &__content {
+    position: relative;
+    transition: height .3s ease-out;
+  }
+
+  &__item {
+    min-height: 4px;
+    transition: opacity .4s ease-out;
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+
+    &.__active {
+      opacity: 1;
+      position: relative;
+      z-index: 9;
+    }
+
+    &:first-child {
+      //position: relative !important;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .tabs {
+    overflow: hidden;
+
+    &__wrapper {
+      overflow: scroll;
+      width: 100%;
+    }
+  }
+}

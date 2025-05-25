@@ -1,0 +1,661 @@
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-ExtraLightItalic.eot');
+    src: local('Klein ExtraLight Italic'), local('Klein-ExtraLightItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-BoldItalic.eot');
+    src: local('Klein Bold Italic'), local('Klein-BoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-ThinItalic.eot');
+    src: local('Klein Condensed Thin Italic'), local('KleinCondensed-ThinItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ThinItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ThinItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Black.eot');
+    src: local('Klein Black'), local('Klein-Black'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Black.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Black.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Black.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Light.eot');
+    src: local('Klein Text Light'), local('KleinText-Light'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Light.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Light.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Light.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Black.eot');
+    src: local('Klein Condensed Black'), local('KleinCondensed-Black'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Black.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Black.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Black.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-MediumItalic.eot');
+    src: local('Klein Condensed Medium Italic'), local('KleinCondensed-MediumItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-MediumItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-MediumItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Medium.eot');
+    src: local('Klein Medium'), local('Klein-Medium'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Medium.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Medium.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBoldItalic.eot');
+    src: local('Klein Text ExtraBold Italic'), local('KleinText-ExtraBoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Regular.eot');
+    src: local('Klein Text Regular'), local('KleinText-Regular'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Regular.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Regular.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Thin.eot');
+    src: local('Klein Thin'), local('Klein-Thin'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Thin.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Thin.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Bold.eot');
+    src: local('Klein Bold'), local('Klein-Bold'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Bold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Bold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-ExtraLight.eot');
+    src: local('Klein ExtraLight'), local('Klein-ExtraLight'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLight.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLight.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Bold.eot');
+    src: local('Klein Condensed Bold'), local('KleinCondensed-Bold'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Bold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Bold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-MediumItalic.eot');
+    src: local('Klein Medium Italic'), local('Klein-MediumItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-MediumItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-MediumItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Regular.eot');
+    src: local('Klein Regular'), local('Klein-Regular'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Regular.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Regular.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-BlackItalic.eot');
+    src: local('Klein Condensed Black Italic'), local('KleinCondensed-BlackItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BlackItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BlackItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBold.eot');
+    src: local('Klein Text ExtraBold'), local('KleinText-ExtraBold'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLight.eot');
+    src: local('Klein Condensed ExtraLight'), local('KleinCondensed-ExtraLight'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLight.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLight.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Black.eot');
+    src: local('Klein Text Black'), local('KleinText-Black'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Black.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Black.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Black.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Italic.eot');
+    src: local('Klein Condensed Italic'), local('KleinCondensed-Italic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Italic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Italic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Medium.eot');
+    src: local('Klein Condensed Medium'), local('KleinCondensed-Medium'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Medium.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Medium.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Book';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Book.eot');
+    src: local('Klein Book'), local('Klein-Book'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Book.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Book.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Book.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Thin.eot');
+    src: local('Klein Condensed Thin'), local('KleinCondensed-Thin'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Thin.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Thin.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-BlackItalic.eot');
+    src: local('Klein Text Black Italic'), local('KleinText-BlackItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BlackItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BlackItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Thin.eot');
+    src: local('Klein Text Thin'), local('KleinText-Thin'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Thin.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Thin.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed Book';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Book.eot');
+    src: local('Klein Condensed Book'), local('KleinCondensed-Book'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Book.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Book.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Book.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLight.eot');
+    src: local('Klein Text ExtraLight'), local('KleinText-ExtraLight'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLight.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLight.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLightItalic.eot');
+    src: local('Klein Text ExtraLight Italic'), local('KleinText-ExtraLightItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Regular.eot');
+    src: local('Klein Condensed Regular'), local('KleinCondensed-Regular'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Regular.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Regular.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-ExtraBoldItalic.eot');
+    src: local('Klein ExtraBold Italic'), local('Klein-ExtraBoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed Book';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-BookItalic.eot');
+    src: local('Klein Condensed Book Italic'), local('KleinCondensed-BookItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BookItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BookItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-BlackItalic.eot');
+    src: local('Klein Black Italic'), local('Klein-BlackItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BlackItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BlackItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-MediumItalic.eot');
+    src: local('Klein Text Medium Italic'), local('KleinText-MediumItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-MediumItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-MediumItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Italic.eot');
+    src: local('Klein Text Italic'), local('KleinText-Italic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Italic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Italic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-LightItalic.eot');
+    src: local('Klein Text Light Italic'), local('KleinText-LightItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-LightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-LightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Light.eot');
+    src: local('Klein Light'), local('Klein-Light'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Light.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Light.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Light.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-LightItalic.eot');
+    src: local('Klein Condensed Light Italic'), local('KleinCondensed-LightItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-LightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-LightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text Book';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-BookItalic.eot');
+    src: local('Klein Text Book Italic'), local('KleinText-BookItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BookItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BookItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Medium.eot');
+    src: local('Klein Text Medium'), local('KleinText-Medium'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Medium.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Medium.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-Light.eot');
+    src: local('Klein Condensed Light'), local('KleinCondensed-Light'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Light.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Light.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Light.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLightItalic.eot');
+    src: local('Klein Condensed ExtraLight Italic'), local('KleinCondensed-ExtraLightItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Book';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-BookItalic.eot');
+    src: local('Klein Book Italic'), local('Klein-BookItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BookItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BookItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBold.eot');
+    src: local('Klein Condensed ExtraBold'), local('KleinCondensed-ExtraBold'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBoldItalic.eot');
+    src: local('Klein Condensed ExtraBold Italic'), local('KleinCondensed-ExtraBoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-LightItalic.eot');
+    src: local('Klein Light Italic'), local('Klein-LightItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-LightItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-LightItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-ThinItalic.eot');
+    src: local('Klein Thin Italic'), local('Klein-ThinItalic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ThinItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ThinItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Bold.eot');
+    src: local('Klein Text Bold'), local('KleinText-Bold'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Bold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Bold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-Italic.eot');
+    src: local('Klein Italic'), local('Klein-Italic'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Italic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Italic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Text Book';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-Book.eot');
+    src: local('Klein Text Book'), local('KleinText-Book'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Book.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Book.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Book.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-ThinItalic.eot');
+    src: local('Klein Text Thin Italic'), local('KleinText-ThinItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ThinItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ThinItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein Condensed';
+    src: url('/local/templates/pansion2023/static/fonts/KleinCondensed-BoldItalic.eot');
+    src: local('Klein Condensed Bold Italic'), local('KleinCondensed-BoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('/local/templates/pansion2023/static/fonts/Klein-ExtraBold.eot');
+    src: local('Klein ExtraBold'), local('Klein-ExtraBold'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBold.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBold.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/Klein-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klein Text';
+    src: url('/local/templates/pansion2023/static/fonts/KleinText-BoldItalic.eot');
+    src: local('Klein Text Bold Italic'), local('KleinText-BoldItalic'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BoldItalic.woff2') format('woff2'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BoldItalic.woff') format('woff'),
+        url('/local/templates/pansion2023/static/fonts/KleinText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TT Drugs';
+    src: url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.eot');
+    src: url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.woff2') format('woff2'),
+    url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.woff') format('woff'),
+    url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.ttf') format('truetype'),
+    url('/local/templates/pansion2023/static/fonts/subset-TTDrugs-Bold.svg#TTDrugs-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
