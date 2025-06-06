@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Добавить пансионат");
+$APPLICATION->SetPageProperty('description', 'Добавить пансионат. 400 пансионатов для пожилых в Pansionat.pro в Москве и Подмосковье. Адреса, телефоны и цены на размещение в пансионаты для пожилых людей.');
 ?>
 
     <div class="add_new_form_wrapper">

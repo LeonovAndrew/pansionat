@@ -13,6 +13,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$arNotLink = [
+    '/pansionat-pansionat-dlya-pozhilykh-osen-zhizni-pushkino/',
+    '/pansionat-pansionat-dlya-pozhilykh-osen-zhizni-pushkino/',
+    '/pansionat-dlya-pozhilykh-lyudey-v-afanasovo/',
+    '/pansionat-dlya-pozhilykh-kiselikha-nika/',
+    '/pansionat-dlya-pozhilykh-nemchinovka/',
+    '/pansionat-pansionat-dlya-pozhilykh-osen-zhizni-saltykovka/',
+    '/pansionat-pansionat-dlya-pozhilykh-medvezhi-ozera/',
+    '/pansionat-pansionat-dlya-pozhilykh-osen-zhizni-drozdovo/',
+    '/pansionat-pansionat-dlya-pozhilykh-osen-zhizni-drozdovo/',
+    '/pansionat-dlya-pozhilykh-liniya-zhizni-mytishchi/',
+    '/pansionat-dlya-pozhilykh-mytishchi-osen-zhizni/',
+    '/pansionat-dlya-pozhilykh-mytishchi-osen-zhizni/',
+];
 ?>
 
 <?php if (count($arResult["ITEMS"]) > 0) : ?>
@@ -30,7 +45,9 @@ $this->setFrameMode(true);
                         </div>
                         <div class="review__pans-text">
                             <p><?=$arItem['PANS']['NAME']?></p>
-                            <p><a href="<?=$arItem['PANS']['DETAIL_PAGE_URL']?>">Подробнее о пансионате</a></p>
+                            <?php if(!in_array($arItem['PANS']['DETAIL_PAGE_URL'], $arNotLink)):?>
+                                <p><a href="<?=$arItem['PANS']['DETAIL_PAGE_URL']?>">Подробнее о пансионате</a></p>
+                            <?php endif;?>
                         </div>
                     </div>
                 <? endif; ?>
