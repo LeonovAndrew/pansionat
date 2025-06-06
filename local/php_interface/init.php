@@ -10,6 +10,8 @@ require_once __DIR__ . '/autoload.php';
 
 use Bitrix\Main\Loader;
 
+@define("ERROR_404", "N");
+
 function generateYMLAgent()
 {
     \DesperadoHelpers\generateYML();
@@ -55,6 +57,29 @@ function setTagsUrl()
     }
 
     $xml->asXML($xmlFile);
+
+    // Удаляем все lastmod
+
+    $xmlFile = $_SERVER['DOCUMENT_ROOT'] . '/sitemap.xml';
+
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+
+    if (!$dom->load($xmlFile)) {
+        die('Ошибка загрузки XML');
+    }
+
+    $xpath = new DOMXPath($dom);
+    $xpath->registerNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+
+    $lastmods = $xpath->query('//sm:lastmod');
+
+    foreach ($lastmods as $lastmod) {
+        $lastmod->parentNode->removeChild($lastmod);
+    }
+
+    $dom->save($xmlFile);
 
     return 'setTagsUrl();';
 }
@@ -180,12 +205,12 @@ function ShowBannerInsideNews(&$content)
 AddEventHandler("main", "OnEpilog", "EpilogFunc");
 function EpilogFunc()
 {
-    if (!CModule::IncludeModule("iblock")) return;
+    if (!CModule::IncludeModule("iblock") || (ERROR_404 == 'Y')) return;
     global $APPLICATION;
     if (!defined("ADMIN_SECTION")) {
 
         $filterTitle = $APPLICATION->GetPageProperty("FILTER_H1");
-        if (!empty($filterTitle))
+        if (!empty($filterTitle) )
             $APPLICATION->SetTitle($filterTitle);
 
 
@@ -204,7 +229,7 @@ function EpilogFunc()
 
         $arSelect = ["ID", "IBLOCK_ID", "NAME", 'PREVIEW_TEXT', "CODE", "PROPERTY_H1",
             "PROPERTY_TITLE", "PROPERTY_DESCRIPTION", "PROPERTY_KEYWORDS", "PROPERTY_META_TITLE", 'PROPERTY_SEO_LINKS'];
-        $arFilter = ["IBLOCK_ID" => 2, "ACTIVE" => "Y", 'CODE' => $_SERVER['SCRIPT_URL']];
+        $arFilter = ["IBLOCK_ID" => 2, "ACTIVE" => "Y", 'CODE' => $APPLICATION->GetCurPage()];
         $res = CIBlockElement::GetList([], $arFilter, false, ["nPageSize" => 1], $arSelect);
         if ($ob = $res->GetNextElement()) {
 
@@ -263,14 +288,14 @@ function EpilogFunc()
     $newDescription = $APPLICATION->GetPageProperty('description_tags');
     $newH1 = $APPLICATION->GetPageProperty('name_tags');
 
-    if(!empty($newTitle)){
+    if (!empty($newTitle)) {
         $APPLICATION->SetPageProperty("title", $newTitle);
         $APPLICATION->SetPageProperty("meta_title", $newTitle);
     }
-    if(!empty($newDescription)){
+    if (!empty($newDescription)) {
         $APPLICATION->SetPageProperty("description", $newDescription);
     }
-    if(!empty($newH1)){
+    if (!empty($newH1)) {
         $APPLICATION->SetTitle($newH1);
     }
 

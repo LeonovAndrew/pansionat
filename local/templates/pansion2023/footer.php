@@ -167,7 +167,7 @@
         "PATH" => SITE_TEMPLATE_PATH . "/include/cookie.php"
     )
 ); ?>
-
+<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
 <? $APPLICATION->IncludeComponent(
     "bitrix:main.include",
     "",
@@ -180,7 +180,7 @@
 ); ?>
 
 <script data-skip-movinf="true" src="/local/templates/pansion2023/static/main.min.js?ts=<?= $ts ?>"></script>
-
+<script data-skip-movinf="true" src="/local/templates/pansion2023/static/vendor/lazyload.min.js?ts=<?= $ts ?>"></script>
 
 <!-- Roistat Counter Start -->
 <script>
@@ -257,7 +257,7 @@
     })();
 </script>
 <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
-
+<?php endif;?>
  <a href="https://pansionaty-stavropol.ru" title="Пансионаты для пожилых Ставрополь" alt="Пансионаты Ставрополь"></a>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -16,7 +17,9 @@
     ?>
     <script data-skip-moving="true">window.cache_ts = '<?= $ts ?>'</script>
     <link rel="stylesheet" href="/local/templates/pansion2023/static/app.min.css?<?= $ts ?>">
-    <script src="https://www.google.com/recaptcha/api.js?render=6LchYzcqAAAAAAKsctUoKXHZGf9JdCrIAF2vBwQh"></script>
+    <?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LchYzcqAAAAAAKsctUoKXHZGf9JdCrIAF2vBwQh"></script>
+    <?php endif;?>
     <meta name="yandex-verification" content="dc0ac0c4eb607d58"/>
     <meta name="yandex-verification" content="638d97160b54ab51"/>
     <?php
@@ -155,7 +158,7 @@
             <li class="mobile-menu__link"><a href="/otzyvy/">Отзывы</a></li>
             <li class="mobile-menu__link"><a href="/faq/">Вопросы — ответы</a></li>
             <li class="mobile-menu__link"><a href="/news/">Новости</a></li>
-            <li class="mobile-menu__link"><a href="/kontakty/">Контакты</a></li>
+            <li class="mobile-menu__link"><a href="/about/">Контакты</a></li>
         </ul>
     </div>
     <div class="mobile-menu__footer">
@@ -178,5 +181,10 @@
     ),
         false
     ); ?>
-    <h1><?php $APPLICATION->ShowTitle(false) ?></h1>
+    <?php $current_url = $APPLICATION->GetCurPage();?>
+    <?php if (strpos($current_url, '/otzyvy-') === false):?>
+        <h1><?php $APPLICATION->ShowTitle(false) ?></h1>
+    <?php else:?>
+        <h2 class="h1-title"><?php $APPLICATION->ShowTitle(false) ?></h2>
+    <?php endif;?>
 <?php endif; ?>
