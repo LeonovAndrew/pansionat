@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Политика использования cookie файлов");
+$APPLICATION->SetPageProperty('description', 'Политика использования cookie файлов. 400 пансионатов для пожилых в Pansionat.pro в Москве и Подмосковье. Адреса, телефоны и цены на размещение в пансионаты для пожилых людей.');
 ?>
 
     <div class="section__content">

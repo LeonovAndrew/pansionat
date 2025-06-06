@@ -1,0 +1,22 @@
+
+.h1-title{
+    font: 40px / 50px Klein, sans-serif;
+    font-weight: 700;
+    margin: 15px 0 30px 0;
+}
+.h2-title{
+    margin: 40px 0;
+    font: 30px / 40px Klein, sans-serif;
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .h1-title {
+        font: 22px / 30px Klein, sans-serif;
+        font-weight: 700;
+    }
+    .h2-title {
+        font: 20px / 27px Klein, sans-serif;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+}

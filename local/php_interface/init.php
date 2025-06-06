@@ -226,7 +226,7 @@ function EpilogFunc()
 //        $filterTitle = $APPLICATION->GetPageProperty("FILTER_KEYWORDS");
 //        if (!empty($filterTitle))
 //            $APPLICATION->SetPageProperty("keywords", $filterTitle);
-
+        $page = $APPLICATION->GetCurPage();
         $arSelect = ["ID", "IBLOCK_ID", "NAME", 'PREVIEW_TEXT', "CODE", "PROPERTY_H1",
             "PROPERTY_TITLE", "PROPERTY_DESCRIPTION", "PROPERTY_KEYWORDS", "PROPERTY_META_TITLE", 'PROPERTY_SEO_LINKS'];
         $arFilter = ["IBLOCK_ID" => 2, "ACTIVE" => "Y", 'CODE' => $APPLICATION->GetCurPage()];

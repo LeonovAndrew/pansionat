@@ -714,7 +714,7 @@ if (strlen($t) > 0) {
 }
 ?>
 
-<h2 style="margin: 40px 0">Отзывы о <?= $arResult['NAME'] ?></h2>
+<div class="h2-title">Отзывы о <?= $arResult['NAME'] ?></div>
 
 <div class="detail__reviews">
     <div class="detail__reviews-left">

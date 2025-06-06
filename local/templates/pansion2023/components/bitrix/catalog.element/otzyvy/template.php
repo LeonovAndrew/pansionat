@@ -54,7 +54,7 @@ $smallFile = CFile::ResizeImageGet(
     </div>
 </div>
 
-<h2 style="margin: 40px 0">Отзывы о <?= $arResult['NAME'] ?></h2>
+<div style="margin: 40px 0"></div>
 
 <div class="detail__reviews">
     <div class="detail__reviews-left">

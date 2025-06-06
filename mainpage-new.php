@@ -1,4 +1,5 @@
 <h2>Пансионаты для пожилых людей</h2>
+<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
 <div class="index-seo">
     <div class="index-seo__img">
         <img src="/local/templates/pansion2023/static/img/mpbg.jpg" alt="Пансионаты для пожилых в Подмосковье"
@@ -41,3 +42,4 @@
     </p>
 </div>
 <br>
+<?php endif;?>

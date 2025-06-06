@@ -31,7 +31,7 @@
 </head>
 <body>
 <?php if ($USER->IsAdmin()) $APPLICATION->ShowPanel(); ?>
-
+<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
 <script data-skip-moving="true">
     var div = document.createElement("div");
     var ajax = new XMLHttpRequest();
@@ -44,7 +44,7 @@
     };
     window.cache_ts = '<?= $ts ?>';
 </script>
-
+<?php endif;?>
 <div class="header__wrapper">
     <div class="container">
         <div class="header">
@@ -185,6 +185,6 @@
     <?php if (strpos($current_url, '/otzyvy-') === false):?>
         <h1><?php $APPLICATION->ShowTitle(false) ?></h1>
     <?php else:?>
-        <h2 class="h1-title"><?php $APPLICATION->ShowTitle(false) ?></h2>
+        <h1>Отзывы о <?php $APPLICATION->ShowTitle(false) ?></h1>
     <?php endif;?>
 <?php endif; ?>

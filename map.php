@@ -1,7 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Карта сайта");
-$APPLICATION->AddChainItem("Карта сайта", "/map.php");
+$APPLICATION->SetPageProperty('description', 'Карта сайта. 400 пансионатов для пожилых в Pansionat.pro в Москве и Подмосковье. Адреса, телефоны и цены на размещение в пансионаты для пожилых людей.');
+    $APPLICATION->AddChainItem("Карта сайта", "/map.php");
 ?>
 
 <div class="like_h2">Сети пансионатов</div>
