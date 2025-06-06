@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Как выбрать пансионат?");
+$APPLICATION->SetPageProperty('description', 'Как выбрать пансионат? 400 пансионатов для пожилых в Pansionat.pro в Москве и Подмосковье. Адреса, телефоны и цены на размещение в пансионаты для пожилых людей.');
 ?>
 
     <div class="how2__title">
