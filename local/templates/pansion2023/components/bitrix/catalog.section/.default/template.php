@@ -35,21 +35,18 @@ $this->setFrameMode(true);
     <? foreach ($arResult['ITEMS'] as $key => $item): ?>
         <div class="pans" data-offer-id="<?= $item['ID'] ?>" itemprop="itemListElement" itemscope
              itemtype="https://schema.org/Offer">
-            <div class="pans__img">
+            <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="pans__img">
 
                 <div class="js_sectionSlider swiper s<?= $item['ID'] ?>" data-id="s<?= $item['ID'] ?>">
                     <div class="swiper-wrapper">
                         <meta itemprop="image" content="https://pansionat.pro<?= $item['SLIDER_PICTURES'][0]['SRC'] ?>">
                         <? foreach ($item['SLIDER_PICTURES'] as $key => $img): ?>
                             <? if ($key == 0): ?>
-                                <div class="pans__img-wrapper swiper-slide"
-                                     onclick="window.location.href='<?= $item['DETAIL_PAGE_URL'] ?>'"
-                                     style="background-image: url('<?= $img['SRC'] ?>')"></div>
+                                <img class="pans__img-wrapper swiper-slide" src="<?= $img['SRC'] ?>" loading="lazy"
+                                     alt="<?php echo $item['NAME']; ?>" title="<?php echo $item['NAME']; ?>">
                             <? else: ?>
-                                <div class="pans__img-wrapper swiper-slide"
-                                     data-background="<?= $img['SRC'] ?>"
-                                     onclick="window.location.href='<?= $item['DETAIL_PAGE_URL'] ?>'">
-                                </div>
+                                <img class="pans__img-wrapper swiper-slide" src="<?= $img['SRC'] ?>" loading="lazy"
+                                     alt="<?php echo $item['NAME']; ?>" title="<?php echo $item['NAME']; ?>">
                             <? endif; ?>
                         <? endforeach; ?>
                     </div>
@@ -67,13 +64,13 @@ $this->setFrameMode(true);
                 <div class="pans__add2fav js-favorite js-tooltip" title="Добавить в избранное"
                      data-item-id="<?= $item['ID'] ?>"><?php \DesperadoHelpers\AppHelper::showIcon('favorite'); ?></div>
                 */ ?>
-            </div>
+            </a>
 
             <div class="pans__description">
                 <div class="pans__name">
                     <link itemprop="url" href="https://pansionat.pro<?= $item['DETAIL_PAGE_URL'] ?>">
                     <meta itemprop="name" content="<?= $item['NAME'] ?>">
-                    <meta itemprop="description" content="<?= strip_tags($item['PREVIEW_TEXT'])?>">
+                    <meta itemprop="description" content="<?= strip_tags($item['PREVIEW_TEXT']) ?>">
                     <a href="<?= $item['DETAIL_PAGE_URL'] ?>"><?= $item['NAME'] ?></a>
                 </div>
                 <div class="pans__rating">

@@ -168,7 +168,6 @@
     )
 ); ?>
 <?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
-
 <? $APPLICATION->IncludeComponent(
     "bitrix:main.include",
     "",
@@ -259,7 +258,6 @@
 </script>
 <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
 <?php endif;?>
-
  <a href="https://pansionaty-stavropol.ru" title="Пансионаты для пожилых Ставрополь" alt="Пансионаты Ставрополь"></a>
 </body>
 </html>
