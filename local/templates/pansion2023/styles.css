@@ -1,3 +1,93 @@
 .pans__img {
     display: block;
 }
+.pans__img-wrapper {
+    object-fit: cover;
+}
+.header__button{
+    padding: 5px 10px;
+}
+.header_icon_wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.deportament_footer_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px 0px 12px 3px #eee;
+}
+.deportament_section{
+    margin-top: 25px;
+}
+.deportament_footer_img {
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+}
+.deportament_footer_items {
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+}
+
+.pans__price_month {
+    font: 16px / 26px Klein, sans-serif;
+    font-weight: 500;
+}
+.pans__name a.pans__adress_wrap, .pans__adress_wrap{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font: 14px / 18px Klein, sans-serif;
+    color: #4949e7;
+}
+.header__search{
+    max-width: 450px;
+}
+.detail_dock_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.detail_dock_item_img {
+    width: 100%;
+    border-radius: 15px;
+}
+.detail_dock_item{
+    position: relative;
+}
+.detail_dock_item_wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    text-align: center;
+}
+.detail_dock_item_name {
+    padding: 5px 10px;
+    background: #4949e7;
+    color: #fff;
+    border-radius: 8px;
+}
+.licenses-slider {
+    padding: 20px 0;
+}
+
+.license-slide img {
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .deportament_footer_wrap{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 600px) {
+    .detail_dock_wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

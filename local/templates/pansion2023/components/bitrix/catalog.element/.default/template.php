@@ -227,7 +227,7 @@ function showFeatureItem($name)
                             <div class="swiper-slide">
                                 <img src="<?= $pic['BIG'] ?>" alt="<?= $arResult['NAME'] ?> фото <?= ($key + 1) ?>"
                                      data-fancybox="gallery"
-                                    <? if ($key == 0): ?><? else: ?>loading="lazy"<? endif; ?>>
+                                     <? if ($key == 0): ?><? else: ?>loading="lazy"<? endif; ?>>
 
                                 <?php if ($key != 0): ?>
                                     <div class="swiper-lazy-preloader"></div><? endif; ?>
@@ -259,10 +259,11 @@ function showFeatureItem($name)
             <div class="detail__panel">
                 <div class="detail__rating">
                     <div class="inline-rating">
-                        <? AppHelper::showRatingHtmlNew(
+                        <? AppHelper::showRatingHtmlProcent(
                             $arResult['PROPERTIES']['RATING']['VALUE'],
                             $arResult['PROPERTIES']['NUM_VOTES']['VALUE'],
-                            true
+                            true,
+                            $arResult['PROPERTIES']['PRC_REC']['VALUE']
                         ) ?>
                     </div>
                     <span class="detail__recommendet">
@@ -326,7 +327,25 @@ function showFeatureItem($name)
 
                     от <span><?= AppHelper::CurrencyFormat($arResult['PROPERTIES']['PRICE']['VALUE']); ?></span>
                     руб/сутки
+                    <div class="pans__price pans__price_month">от <?= AppHelper::CurrencyFormat($arResult['PROPERTIES']['PRICE']['VALUE']*30); ?>
+                        руб/мес.
+                    </div>
                 </div>
+                <?php if(!empty($arResult['PROPERTIES']['ADDRESS']['VALUE'])):?>
+                    <a href="#map_section" class="pans__adress_wrap">
+                        <span class="pans__adress_icon">
+                            <svg width="18px" height="18px" viewBox="0 0 8.4666669 8.4666669" xmlns:svg="http://www.w3.org/2000/svg">
+                                <g id="layer1" transform="translate(0,-288.53332)">
+                                    <path fill="#4949e7" d="m 4.2324219,288.79688 c -1.6042437,0 -2.9101556,1.30591 -2.9101563,2.91015 -10e-7,2.82277 2.7460938,4.96875 2.7460938,4.96875 a 0.26460978,0.26460978 0 0 0 0.3300781,0 c 0,0 2.7460996,-2.14598 2.7460937,-4.96875 -3.4e-6,-1.60424 -1.3078657,-2.91015 -2.9121093,-2.91015 z m 0,0.52929 c 1.3182605,0 2.3828097,1.0626 2.3828125,2.38086 4.8e-6,2.30926 -2.0910618,4.13374 -2.3808594,4.38086 -0.2884142,-0.24588 -2.3828134,-2.0707 -2.3828125,-4.38086 5e-7,-1.31826 1.0625988,-2.38086 2.3808594,-2.38086 z" id="path929"/>
+                                    <path fill="#4949e7" d="m 4.2324219,290.38477 c -0.7274912,0 -1.3222633,0.59477 -1.3222657,1.32226 -4.5e-6,0.7275 0.5947697,1.32422 1.3222657,1.32422 0.727496,0 1.3242233,-0.59672 1.3242187,-1.32422 -2.3e-6,-0.72749 -0.5967275,-1.32226 -1.3242187,-1.32226 z m 0,0.52929 c 0.4415089,0 0.7949204,0.35146 0.7949219,0.79297 2.7e-6,0.44151 -0.35341,0.79492 -0.7949219,0.79492 -0.441512,0 -0.7929715,-0.35341 -0.7929688,-0.79492 1.4e-6,-0.44151 0.3514598,-0.79297 0.7929688,-0.79297 z" id="circle931" />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="pans__adress_name">
+                            <?=$arResult['PROPERTIES']['ADDRESS']['VALUE']?>
+                        </span>
+                    </a>
+                <?php endif;?>
 
                 <meta itemprop="price"
                       content="<?= number_format($arResult['PROPERTIES']['PRICE']['VALUE'], 2, '.', '') ?>">
@@ -394,8 +413,66 @@ function showFeatureItem($name)
 </div>
 
 <?php echo '</div>' ?>
-<div class="container" style="margin-top: 40px"><h2><?= $arResult['NAME'] ?> на карте</h2></div>
-<div id="detail_map"></div>
+
+<div class="container" id="map_section" style="margin-top: 40px"><h2><?= $arResult['NAME'] ?> на карте</h2></div>
+
+<?php if (!empty($arResult['PROPERTIES']['ADDRESS']['VALUE'])) { ?>
+    <div class="container">
+        <div class="map__wrap">
+            <div class="detail__route">
+                <div class="route__item">
+                    <div class="icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 11.5C11.337 11.5 10.7011 11.2366 10.2322 10.7678C9.76339 10.2989 9.5 9.66304 9.5 9C9.5 8.33696 9.76339 7.70107 10.2322 7.23223C10.7011 6.76339 11.337 6.5 12 6.5C12.663 6.5 13.2989 6.76339 13.7678 7.23223C14.2366 7.70107 14.5 8.33696 14.5 9C14.5 9.3283 14.4353 9.65339 14.3097 9.95671C14.1841 10.26 13.9999 10.5356 13.7678 10.7678C13.5356 10.9999 13.26 11.1841 12.9567 11.3097C12.6534 11.4353 12.3283 11.5 12 11.5ZM12 2C10.1435 2 8.36301 2.7375 7.05025 4.05025C5.7375 5.36301 5 7.14348 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 7.14348 18.2625 5.36301 16.9497 4.05025C15.637 2.7375 13.8565 2 12 2Z"
+                                  fill="#fff"/>
+                        </svg>
+                    </div>
+                    <span><b>Адрес</b>: <?php echo $arResult['PROPERTIES']['ADDRESS']['VALUE']; ?></span>
+                </div>
+                <?php if (!empty($arResult['PROPERTIES']['ADDRESS_AUTO']['VALUE'])) { ?>
+                    <div class="route__item">
+                        <div class="icon-wrap">
+                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 6L3.5 1.5H14.5L16 6M14.5 11C14.1022 11 13.7206 10.842 13.4393 10.5607C13.158 10.2794 13 9.89782 13 9.5C13 9.10218 13.158 8.72064 13.4393 8.43934C13.7206 8.15804 14.1022 8 14.5 8C14.8978 8 15.2794 8.15804 15.5607 8.43934C15.842 8.72064 16 9.10218 16 9.5C16 9.89782 15.842 10.2794 15.5607 10.5607C15.2794 10.842 14.8978 11 14.5 11ZM3.5 11C3.10218 11 2.72064 10.842 2.43934 10.5607C2.15804 10.2794 2 9.89782 2 9.5C2 9.10218 2.15804 8.72064 2.43934 8.43934C2.72064 8.15804 3.10218 8 3.5 8C3.89782 8 4.27936 8.15804 4.56066 8.43934C4.84196 8.72064 5 9.10218 5 9.5C5 9.89782 4.84196 10.2794 4.56066 10.5607C4.27936 10.842 3.89782 11 3.5 11ZM15.92 1C15.72 0.42 15.16 0 14.5 0H3.5C2.84 0 2.28 0.42 2.08 1L0 7V15C0 15.2652 0.105357 15.5196 0.292893 15.7071C0.48043 15.8946 0.734784 16 1 16H2C2.26522 16 2.51957 15.8946 2.70711 15.7071C2.89464 15.5196 3 15.2652 3 15V14H15V15C15 15.2652 15.1054 15.5196 15.2929 15.7071C15.4804 15.8946 15.7348 16 16 16H17C17.2652 16 17.5196 15.8946 17.7071 15.7071C17.8946 15.5196 18 15.2652 18 15V7L15.92 1Z"
+                                      fill="#fff"/>
+                            </svg>
+                        </div>
+                        <span><b>На авто</b>: <?php echo $arResult['PROPERTIES']['ADDRESS_AUTO']['VALUE']['TEXT']; ?></span>
+                    </div>
+                <?php } ?>
+                <?php if (!empty($arResult['PROPERTIES']['ADDRESS_BUS']['VALUE'])) { ?>
+                    <div class="route__item">
+                        <div class="icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 11H6V6H18M16.5 17C16.1022 17 15.7206 16.842 15.4393 16.5607C15.158 16.2794 15 15.8978 15 15.5C15 15.1022 15.158 14.7206 15.4393 14.4393C15.7206 14.158 16.1022 14 16.5 14C16.8978 14 17.2794 14.158 17.5607 14.4393C17.842 14.7206 18 15.1022 18 15.5C18 15.8978 17.842 16.2794 17.5607 16.5607C17.2794 16.842 16.8978 17 16.5 17ZM7.5 17C7.10218 17 6.72064 16.842 6.43934 16.5607C6.15804 16.2794 6 15.8978 6 15.5C6 15.1022 6.15804 14.7206 6.43934 14.4393C6.72064 14.158 7.10218 14 7.5 14C7.89782 14 8.27936 14.158 8.56066 14.4393C8.84196 14.7206 9 15.1022 9 15.5C9 15.8978 8.84196 16.2794 8.56066 16.5607C8.27936 16.842 7.89782 17 7.5 17ZM4 16C4 16.88 4.39 17.67 5 18.22V20C5 20.2652 5.10536 20.5196 5.29289 20.7071C5.48043 20.8946 5.73478 21 6 21H7C7.26522 21 7.51957 20.8946 7.70711 20.7071C7.89464 20.5196 8 20.2652 8 20V19H16V20C16 20.2652 16.1054 20.5196 16.2929 20.7071C16.4804 20.8946 16.7348 21 17 21H18C18.2652 21 18.5196 20.8946 18.7071 20.7071C18.8946 20.5196 19 20.2652 19 20V18.22C19.61 17.67 20 16.88 20 16V6C20 2.5 16.42 2 12 2C7.58 2 4 2.5 4 6V16Z"
+                                      fill="#fff"/>
+                            </svg>
+                        </div>
+                        <span><b>На автобусе</b>: <?php echo $arResult['PROPERTIES']['ADDRESS_BUS']['VALUE']['TEXT']; ?></span>
+                    </div>
+                <?php } ?>
+                <?php if (!empty($arResult['PROPERTIES']['ADDRESS_ELECTRIC']['VALUE'])) { ?>
+                    <div class="route__item">
+                        <div class="icon-wrap">
+                            <svg width="20" height="15" viewBox="0 0 20 15" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0C15.634 0 19.853 3.11 19.996 7.754L20 8C20 8.79565 19.6839 9.55871 19.1213 10.1213C18.5587 10.6839 17.7956 11 17 11H1C0.734784 11 0.48043 10.8946 0.292893 10.7071C0.105357 10.5196 0 10.2652 0 10V1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H9ZM5 2H2V5H5V2ZM9 2H7V5H10V2.026C9.66695 2.00856 9.3335 1.99989 9 2ZM12.001 2.257L12 5H17.04C16.061 3.663 14.351 2.694 12.001 2.257ZM19 13C19.2652 13 19.5196 13.1054 19.7071 13.2929C19.8946 13.4804 20 13.7348 20 14C20 14.2652 19.8946 14.5196 19.7071 14.7071C19.5196 14.8946 19.2652 15 19 15H1C0.734784 15 0.48043 14.8946 0.292893 14.7071C0.105357 14.5196 0 14.2652 0 14C0 13.7348 0.105357 13.4804 0.292893 13.2929C0.48043 13.1054 0.734784 13 1 13H19Z"
+                                      fill="#fff"/>
+                            </svg>
+                        </div>
+                        <span><b>На электричке</b>: <?php echo $arResult['PROPERTIES']['ADDRESS_ELECTRIC']['VALUE']['TEXT']; ?></span>
+                    </div>
+                <?php } ?>
+            </div>
+            <div id="detail_map"></div>
+        </div>
+    </div>
+<?php } else { ?>
+    <div id="detail_map"></div>
+<?php } ?>
+
 <?php echo '<div class="container">' ?>
 
 <script>
@@ -439,7 +516,72 @@ function showFeatureItem($name)
         }
 
 </script>
+<div class="block">
+    <div class="container">
+        <h3 class="h2">
+            Документы для заселения
+        </h3>
+        <div class="detail_dock_wrap">
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/pasp.jpg" alt="Паспорт" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Паспорт
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/polis2.jpg" alt="Полис ОМС" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Полис ОМС
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/snils.jpg" alt="СНИЛС" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        СНИЛС
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/vipiska.jpg" alt="Выписка" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Выписка (при наличии)
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<?php if (!empty($arResult['PROPERTIES']['LICENSES']['VALUE'])): ?>
+<div class="block">
+    <div class="container">
+        <h3 class="h2">
+            Лицензии
+        </h3>
+        <div class="licenses-slider swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($arResult['PROPERTIES']['LICENSES']['VALUE'] as $fileId): ?>
+                    <?php
+                    // Получаем данные файла по ID
+                    $file = CFile::GetFileArray($fileId);
+                    ?>
+                    <div class="license-slide swiper-slide">
 
+                        <img src="<?= $file['SRC'] ?>" alt="Лицензия" data-fancybox="licenses"/>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
 <div class="block">
     <div class="container">
         <? $APPLICATION->IncludeComponent(
