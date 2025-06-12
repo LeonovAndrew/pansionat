@@ -1,7 +1,31 @@
+<?php
+use \Bitrix\Main\Config\Option;
+?>
 <?php if (!CSite::InDir('/index.php')): ?>
     </div>
 <?php endif; ?>
 <? $var = \DesperadoHelpers\AppHelper::getSiteDef(); ?>
+
+<section class="container deportament_section">
+    <div class="deportament_footer_wrap">
+        <div class="deportament_footer_items">
+            <a href="https://dszn.ru/deyatelnost/Socialnaya-integraciya-invalidov" target="_blank">
+                <img src="/local/templates/pansion2023/static/img/dep_tr.png" alt="Департамент труда и социальной защиты города Москва" class="deportament_footer_img">
+            </a>
+        </div>
+        <div class="deportament_footer_items">
+            <a href="https://www.rospotrebnadzor.ru/" target="_blank">
+                <img src="/local/templates/pansion2023/static/img/dep_zd.png" alt="Департамент здравоохранения города Москва" class="deportament_footer_img">
+            </a>
+        </div>
+        <div class="deportament_footer_items">
+            <a href="https://mosgorzdrav.ru/" target="_blank">
+                <img src="/local/templates/pansion2023/static/img/fed_nad.png" alt="Федеральная служба по надзору в сфере защиты прав потребителей и благополучия человека" class="deportament_footer_img">
+            </a>
+        </div>
+    </div>
+</section>
+
 <div class="footer__wrapper">
     <div class="container">
         <div class="footer">
@@ -187,6 +211,14 @@
     ]
 ); ?>
 <?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) : ?>
+
+<?php
+    $dopScripts = Option::get("grain.customsettings","scripts");
+    if(!empty($dopScripts) && $dopScripts !=''){
+        echo $dopScripts;
+    }
+    ?>
+
     <? $APPLICATION->IncludeComponent(
         "bitrix:main.include",
         "",
@@ -219,7 +251,6 @@
     </script>
     <!-- Roistat Counter End -->
 
-
     <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
     <div class="js-whatsapp-message-container" style="display:none;">Отправьте, пожалуйста, данное сообщение и задайте
         после него свой вопрос. Ваш номер обращения: {roistat_visit}
@@ -241,7 +272,6 @@
             function handler() {
                 function init() {
                     appendMessageToLinks();
-
                     var delays = [1000, 5000, 15000];
                     setTimeout(function func(i) {
                         if (i === undefined) {
@@ -254,7 +284,6 @@
                         }
                     }, delays[0]);
                 }
-
                 function replaceQueryParam(url, param, value) {
                     var explodedUrl = url.split('?');
                     var baseUrl = explodedUrl[0] || '';

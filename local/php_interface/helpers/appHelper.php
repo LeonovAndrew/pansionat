@@ -80,6 +80,37 @@ class AppHelper
         }
     }
 
+    static function showRatingHtmlProcent($rating = 0, $numvotes = 0, $shor = true, $procent = 100)
+    {
+        if (empty($rating))
+            $rating = 0;
+        $rating = floatval($rating);
+        for ($i = 0; $i < 5; $i++) {
+            if ($rating >= $i + 1) {
+                echo '<span class="rating-icon">' . self::showIcon('star-filled', true) . '</span>';
+            } elseif ($rating > $i && $rating < $i + 1) {
+                $prc = intval(($rating - $i) * 9 + 5);
+                if ($prc > 100) $prc == 95;
+                echo '<span class="rating-icon">';
+                echo '<span class="rating-icon" style="position: absolute;width: ' . $prc . 'px;overflow: hidden;left:0">';
+                echo '<span class="rating-icon" style="position: absolute;">' . self::showIcon('star-filled', true) . '</span>';
+                echo '</span>' . self::showIcon('star-blank', true) . '</span>';
+            } else {
+                echo '<span class="rating-icon">' . self::showIcon('star-blank', true) . '</span>';
+            }
+        }
+        $ratingVal = round($procent / 100 * 5, 1);
+        if (intval($numvotes) > 0) {
+            if ($shor) {
+                echo '<span class="num-rating">' . $ratingVal . '</span>';
+                echo '<span class="num-votes">(' . $numvotes . ' отзывов)</span>';
+            } else {
+                echo '<span class="num-votes">' . $numvotes . ' голосов</span>';
+            }
+
+        }
+    }
+
     static function svgAsImg($img, $height = 20)
     {
         $file = $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img/' . $img;

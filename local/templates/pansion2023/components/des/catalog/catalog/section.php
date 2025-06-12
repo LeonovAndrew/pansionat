@@ -62,7 +62,7 @@ if ($obCache->InitCache(36000, serialize($arFilter), "/iblock/catalog")) {
 if (!isset($arCurSection))
     $arCurSection = array();
 ?>
-<?php if(empty($arTagVals['TEXT_BEFORE']['TEXT'])):?>
+<?php if(empty($arTag)):?>
 <?
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
@@ -90,8 +90,10 @@ $APPLICATION->IncludeComponent(
 ?>
 <?php endif;?>
 <div class="description">
-    <?php if(!empty($arTagVals['TEXT_BEFORE']['TEXT'])):?>
-        <?php echo $arTagVals['TEXT_BEFORE']['TEXT'];?>
+    <?php if(!empty($arTag)):?>
+        <?php if(!empty($arTagVals['TEXT_BEFORE']['TEXT'])):?>
+            <?php echo $arTagVals['TEXT_BEFORE']['TEXT'];?>
+        <?php endif;?>
     <?php else:?>
         #SEO_FILTER_SECTION#
     <?php endif;?>
@@ -504,18 +506,18 @@ $APPLICATION->IncludeComponent(
         ?>
     </div>
 </div>
-
+<?php if(!empty($arTag)):?>
 <div class="seo-text">
-
     <?php if(!empty($arTagVals['TEXT_AFTER']['TEXT'])):?>
         <?php echo $arTagVals['TEXT_AFTER']['TEXT'];?>
-    <?php else:?>
+    <?php endif;?>
+</div>
+<?php else:?>
+    <div class="seo-text">
         <? $APPLICATION->ShowViewContent('seo_bottom'); ?>
         #SEO_BOTTOM_FILTER_SECTION#
-    <?php endif;?>
-
-</div>
-
+    </div>
+<?php endif;?>
 <?php
 if(!empty($sectionId) && !empty($section) && !empty($arTag)){
     $APPLICATION->AddChainItem($section['NAME'],"/".$section['CODE'].'/');

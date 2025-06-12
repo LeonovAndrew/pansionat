@@ -259,10 +259,11 @@ function showFeatureItem($name)
             <div class="detail__panel">
                 <div class="detail__rating">
                     <div class="inline-rating">
-                        <? AppHelper::showRatingHtmlNew(
+                        <? AppHelper::showRatingHtmlProcent(
                             $arResult['PROPERTIES']['RATING']['VALUE'],
                             $arResult['PROPERTIES']['NUM_VOTES']['VALUE'],
-                            true
+                            true,
+                            $arResult['PROPERTIES']['PRC_REC']['VALUE']
                         ) ?>
                     </div>
                     <span class="detail__recommendet">
@@ -326,7 +327,25 @@ function showFeatureItem($name)
 
                     от <span><?= AppHelper::CurrencyFormat($arResult['PROPERTIES']['PRICE']['VALUE']); ?></span>
                     руб/сутки
+                    <div class="pans__price pans__price_month">от <?= AppHelper::CurrencyFormat($arResult['PROPERTIES']['PRICE']['VALUE']*30); ?>
+                        руб/мес.
+                    </div>
                 </div>
+                <?php if(!empty($arResult['PROPERTIES']['ADDRESS']['VALUE'])):?>
+                    <a href="#map_section" class="pans__adress_wrap">
+                        <span class="pans__adress_icon">
+                            <svg width="18px" height="18px" viewBox="0 0 8.4666669 8.4666669" xmlns:svg="http://www.w3.org/2000/svg">
+                                <g id="layer1" transform="translate(0,-288.53332)">
+                                    <path fill="#4949e7" d="m 4.2324219,288.79688 c -1.6042437,0 -2.9101556,1.30591 -2.9101563,2.91015 -10e-7,2.82277 2.7460938,4.96875 2.7460938,4.96875 a 0.26460978,0.26460978 0 0 0 0.3300781,0 c 0,0 2.7460996,-2.14598 2.7460937,-4.96875 -3.4e-6,-1.60424 -1.3078657,-2.91015 -2.9121093,-2.91015 z m 0,0.52929 c 1.3182605,0 2.3828097,1.0626 2.3828125,2.38086 4.8e-6,2.30926 -2.0910618,4.13374 -2.3808594,4.38086 -0.2884142,-0.24588 -2.3828134,-2.0707 -2.3828125,-4.38086 5e-7,-1.31826 1.0625988,-2.38086 2.3808594,-2.38086 z" id="path929"/>
+                                    <path fill="#4949e7" d="m 4.2324219,290.38477 c -0.7274912,0 -1.3222633,0.59477 -1.3222657,1.32226 -4.5e-6,0.7275 0.5947697,1.32422 1.3222657,1.32422 0.727496,0 1.3242233,-0.59672 1.3242187,-1.32422 -2.3e-6,-0.72749 -0.5967275,-1.32226 -1.3242187,-1.32226 z m 0,0.52929 c 0.4415089,0 0.7949204,0.35146 0.7949219,0.79297 2.7e-6,0.44151 -0.35341,0.79492 -0.7949219,0.79492 -0.441512,0 -0.7929715,-0.35341 -0.7929688,-0.79492 1.4e-6,-0.44151 0.3514598,-0.79297 0.7929688,-0.79297 z" id="circle931" />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="pans__adress_name">
+                            <?=$arResult['PROPERTIES']['ADDRESS']['VALUE']?>
+                        </span>
+                    </a>
+                <?php endif;?>
 
                 <meta itemprop="price"
                       content="<?= number_format($arResult['PROPERTIES']['PRICE']['VALUE'], 2, '.', '') ?>">
@@ -497,7 +516,72 @@ function showFeatureItem($name)
         }
 
 </script>
+<div class="block">
+    <div class="container">
+        <h3 class="h2">
+            Документы для заселения
+        </h3>
+        <div class="detail_dock_wrap">
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/pasp.jpg" alt="Паспорт" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Паспорт
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/polis2.jpg" alt="Полис ОМС" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Полис ОМС
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/snils.jpg" alt="СНИЛС" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        СНИЛС
+                    </span>
+                </span>
+            </div>
+            <div class="detail_dock_item">
+                <img src="/local/templates/pansion2023/static/img/vipiska.jpg" alt="Выписка" class="detail_dock_item_img">
+                <span class="detail_dock_item_wrap">
+                    <span class="detail_dock_item_name">
+                        Выписка (при наличии)
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<?php if (!empty($arResult['PROPERTIES']['LICENSES']['VALUE'])): ?>
+<div class="block">
+    <div class="container">
+        <h3 class="h2">
+            Лицензии
+        </h3>
+        <div class="licenses-slider swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($arResult['PROPERTIES']['LICENSES']['VALUE'] as $fileId): ?>
+                    <?php
+                    // Получаем данные файла по ID
+                    $file = CFile::GetFileArray($fileId);
+                    ?>
+                    <div class="license-slide swiper-slide">
 
+                        <img src="<?= $file['SRC'] ?>" alt="Лицензия" data-fancybox="licenses"/>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
 <div class="block">
     <div class="container">
         <? $APPLICATION->IncludeComponent(
