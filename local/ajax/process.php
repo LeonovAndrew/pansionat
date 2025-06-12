@@ -53,14 +53,6 @@ if (isset($_REQUEST['token']) && !empty($_REQUEST['token'])) {
         echo json_encode(array('msg' => 'error', 'error_code' => 'ReCaptcha Error'));
         die();
     }
-
-
-//    $verify = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'], $_REQUEST['token']);
-//    if ($verify->success == 'false' || $verify->action !== 'send_form' || floatval($verify->score) < 0.5) {
-//        //выбросить исключение или показать ошибку
-//        echo json_encode(array('msg' => 'error', 'error_code' => 'ReCaptcha Error'));
-//        die();
-//    }
 }
 
 if (isset($_POST['modal_action']) && $captchaValid) {
@@ -231,10 +223,6 @@ if (isset($_POST['modal_action']) && $captchaValid) {
                 'UF_CRM_1693815630' => $post['client_ids'],
                 "COMMENTS" => $crmComment,
                 'UF_CRM_1739346250' => $roistatVisitId,
-                // UC_RV9SK3 - пансионат Осень
-                // 4 - каталог пансионатов
-                // 5 - пансионат Гармония
-                // 6 - пансионат Линия
             );
 
             $result = CurlBitrix24Contact('crm.contact.list.json', array(

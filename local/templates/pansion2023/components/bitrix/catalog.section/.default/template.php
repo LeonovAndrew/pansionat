@@ -40,8 +40,9 @@ $this->setFrameMode(true);
                 <div class="js_sectionSlider swiper s<?= $item['ID'] ?>" data-id="s<?= $item['ID'] ?>">
                     <div class="swiper-wrapper">
                         <meta itemprop="image" content="https://pansionat.pro<?= $item['SLIDER_PICTURES'][0]['SRC'] ?>">
-                        <? foreach ($item['SLIDER_PICTURES'] as $key => $img): ?>
-                            <? if ($key == 0): ?>
+                        <? foreach ($item['SLIDER_PICTURES'] as $iKeySecond => $img): ?>
+                            <?php if ($iKeySecond > 10) continue; ?>
+                            <? if ($iKeySecond == 0): ?>
                                 <img class="pans__img-wrapper swiper-slide" src="<?= $img['SRC'] ?>" loading="lazy"
                                      alt="<?php echo $item['NAME']; ?>" title="<?php echo $item['NAME']; ?>">
                             <? else: ?>
@@ -52,6 +53,7 @@ $this->setFrameMode(true);
                     </div>
                     <div class="swiper-button-next next-s<?= $item['ID'] ?>"></div>
                     <div class="swiper-button-prev prev-s<?= $item['ID'] ?>"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
 
                 <? if (count($item['SLIDER_PICTURES']) > 1): ?>

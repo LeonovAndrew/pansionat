@@ -4,6 +4,7 @@ const buildSwiperSlider = sliderElm => {
     const sliderIdentifier = sliderElm.dataset.id;
     // console.log(sliderIdentifier)
     // console.log(`.swiper-button-next-${sliderIdentifier}`);
+
     return new Swiper('.' + sliderIdentifier, {
         navigation: {
             nextEl: `.next-${sliderIdentifier}`,

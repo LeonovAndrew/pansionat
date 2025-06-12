@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,9 +16,10 @@
     ?>
     <script data-skip-moving="true">window.cache_ts = '<?= $ts ?>'</script>
     <link rel="stylesheet" href="/local/templates/pansion2023/static/app.min.css?<?= $ts ?>">
-    <?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
+    <?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) : ?>
         <script src="https://www.google.com/recaptcha/api.js?render=6LchYzcqAAAAAAKsctUoKXHZGf9JdCrIAF2vBwQh"></script>
-    <?php endif;?>
+        <script src="/local/templates/pansion2023/script.js"></script>
+    <?php endif; ?>
     <meta name="yandex-verification" content="dc0ac0c4eb607d58"/>
     <meta name="yandex-verification" content="638d97160b54ab51"/>
     <?php
@@ -31,20 +31,20 @@
 </head>
 <body>
 <?php if ($USER->IsAdmin()) $APPLICATION->ShowPanel(); ?>
-<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) :?>
-<script data-skip-moving="true">
-    var div = document.createElement("div");
-    var ajax = new XMLHttpRequest();
-    ajax.open("GET", "<?= SITE_TEMPLATE_PATH ?>/static/sprite.svg", true);
-    ajax.send();
-    ajax.onload = function (e) {
-        div.innerHTML = ajax.responseText;
-        document.body.insertBefore(div, document.body.childNodes[0]);
-        div.style.height = '0';
-    };
-    window.cache_ts = '<?= $ts ?>';
-</script>
-<?php endif;?>
+<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) : ?>
+    <script data-skip-moving="true">
+        var div = document.createElement("div");
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", "<?= SITE_TEMPLATE_PATH ?>/static/sprite.svg", true);
+        ajax.send();
+        ajax.onload = function (e) {
+            div.innerHTML = ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);
+            div.style.height = '0';
+        };
+        window.cache_ts = '<?= $ts ?>';
+    </script>
+<?php endif; ?>
 <div class="header__wrapper">
     <div class="container">
         <div class="header">
@@ -56,6 +56,12 @@
                         <?php \DesperadoHelpers\AppHelper::showIcon('logo'); ?>
                     </a>
                 <?php endif; ?>
+            </div>
+            <div class="main-menu__map location-btn">
+                <svg>
+                    <use xlink:href="#icon-location"></use>
+                </svg>
+                Город
             </div>
             <div class="header__search">
                 <form action="/" class="header__search-from" id="title-search">
@@ -83,7 +89,7 @@
             <a href="/find/map/" class="main-menu__map">
                 <?php \DesperadoHelpers\AppHelper::showIcon('location'); ?> На карте</a>
             <?php $var = \DesperadoHelpers\AppHelper::getSiteDef(); ?>
-            <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "main_menu", array(
+            <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "main_menu", [
                 "ADD_SECTIONS_CHAIN" => "N",    // Включать раздел в цепочку навигации
                 "CACHE_FILTER" => "N",    // Кешировать при установленном фильтре
                 "CACHE_GROUPS" => "Y",    // Учитывать права доступа
@@ -94,21 +100,21 @@
                 "IBLOCK_ID" => $var['MENU_IBLOCK_ID'],    // Инфоблок
                 "IBLOCK_TYPE" => "pansionat",    // Тип инфоблока
                 "SECTION_CODE" => "",    // Код раздела
-                "SECTION_FIELDS" => array(    // Поля разделов
+                "SECTION_FIELDS" => [    // Поля разделов
                     0 => "",
                     1 => "",
-                ),
+                ],
                 "SECTION_ID" => $var['MENU_SECTION_ID'],    // ID раздела
                 "SECTION_URL" => "",    // URL, ведущий на страницу с содержимым раздела
-                "SECTION_USER_FIELDS" => array(    // Свойства разделов
+                "SECTION_USER_FIELDS" => [    // Свойства разделов
                     0 => "",
                     1 => "",
-                ),
+                ],
                 "SHOW_PARENT_NAME" => "Y",    // Показывать название раздела
                 "TOP_DEPTH" => "2",    // Максимальная отображаемая глубина разделов
                 "VIEW_MODE" => "LINE",    // Вид списка подразделов
-                "COMPONENT_TEMPLATE" => ".default"
-            ),
+                "COMPONENT_TEMPLATE" => ".default",
+            ],
                 false
             ); ?>
         </div>
@@ -158,6 +164,7 @@
             <li class="mobile-menu__link"><a href="/otzyvy/">Отзывы</a></li>
             <li class="mobile-menu__link"><a href="/faq/">Вопросы — ответы</a></li>
             <li class="mobile-menu__link"><a href="/news/">Новости</a></li>
+            <li class="mobile-menu__link"><a href="/gallery/">Галерея</a></li>
             <li class="mobile-menu__link"><a href="/about/">Контакты</a></li>
         </ul>
     </div>
@@ -174,17 +181,17 @@
 
 <?php if (!CSite::InDir('/index.php')): ?>
 <div class="container">
-    <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb", "brdc", array(
+    <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb", "brdc", [
         "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
         "SITE_ID" => "s1",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
         "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
-    ),
+    ],
         false
     ); ?>
-    <?php $current_url = $APPLICATION->GetCurPage();?>
-    <?php if (strpos($current_url, '/otzyvy-') === false):?>
+    <?php $current_url = $APPLICATION->GetCurPage(); ?>
+    <?php if (strpos($current_url, '/otzyvy-') === false): ?>
         <h1><?php $APPLICATION->ShowTitle(false) ?></h1>
-    <?php else:?>
+    <?php else: ?>
         <h1>Отзывы о <?php $APPLICATION->ShowTitle(false) ?></h1>
-    <?php endif;?>
-<?php endif; ?>
+    <?php endif; ?>
+    <?php endif; ?>
