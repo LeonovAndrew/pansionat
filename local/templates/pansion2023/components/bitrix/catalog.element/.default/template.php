@@ -414,7 +414,7 @@ function showFeatureItem($name)
 
 <?php echo '</div>' ?>
 
-<div class="container" id="map_section" style="margin-top: 40px"><h2><?= $arResult['NAME'] ?> на карте</h2></div>
+<div class="container" style="margin-top: 40px"><h2><?= $arResult['NAME'] ?> на карте</h2></div>
 
 <?php if (!empty($arResult['PROPERTIES']['ADDRESS']['VALUE'])) { ?>
     <div class="container">

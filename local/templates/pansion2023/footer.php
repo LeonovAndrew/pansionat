@@ -251,7 +251,6 @@ use \Bitrix\Main\Config\Option;
     </script>
     <!-- Roistat Counter End -->
 
-
     <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
     <div class="js-whatsapp-message-container" style="display:none;">Отправьте, пожалуйста, данное сообщение и задайте
         после него свой вопрос. Ваш номер обращения: {roistat_visit}
@@ -273,7 +272,6 @@ use \Bitrix\Main\Config\Option;
             function handler() {
                 function init() {
                     appendMessageToLinks();
-
                     var delays = [1000, 5000, 15000];
                     setTimeout(function func(i) {
                         if (i === undefined) {
@@ -286,7 +284,6 @@ use \Bitrix\Main\Config\Option;
                         }
                     }, delays[0]);
                 }
-
                 function replaceQueryParam(url, param, value) {
                     var explodedUrl = url.split('?');
                     var baseUrl = explodedUrl[0] || '';

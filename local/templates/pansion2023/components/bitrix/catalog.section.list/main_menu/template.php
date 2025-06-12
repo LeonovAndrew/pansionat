@@ -19,4 +19,5 @@ $this->setFrameMode(true);
         <li><a href="<?= $item['SECTION_PAGE_URL'] ?>"><?= $item['NAME'] ?></a></li>
     <? endforeach; ?>
     <li><a href="/otzyvy/">Отзывы</a></li>
+    <li><a href="/gallery/">Галерея</a></li>
 </ul>
