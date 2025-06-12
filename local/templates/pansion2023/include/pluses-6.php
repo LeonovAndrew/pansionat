@@ -21,6 +21,6 @@
     </div>
     <div class="plus">
         <div class="plus__img"><?php \DesperadoHelpers\AppHelper::showIcon('plus6'); ?></div>
-        <div class="plus__text">Уход и забота<br>24/7</div>
+        <div class="plus__text">Консультанты с мед.<br>образованием</div>
     </div>
 </div>
