@@ -178,8 +178,10 @@ use \Bitrix\Main\Config\Option;
             </button>
             <div class="popup__title">Выберите ваш город</div>
             <div class="popup__grid">
+                <a href="/pansionaty-dlya-pozhilykh/"
+                   class="popup__item"><b>Москва</b></a>
                 <?php
-                $res = CIBlockSection::GetList([], ['SECTION_ID' => 159, 'ACTIVE' => 'Y'], false, ['ID', 'NAME', 'SECTION_PAGE_URL']);
+                $res = CIBlockSection::GetList(['NAME' => 'ASC'], ['SECTION_ID' => 159, 'ACTIVE' => 'Y'], false, ['ID', 'NAME', 'SECTION_PAGE_URL']);
 
                 while ($arItem = $res->GetNext()) { ?>
                     <a href="<?php echo $arItem['SECTION_PAGE_URL']; ?>"

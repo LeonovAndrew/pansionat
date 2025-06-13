@@ -116,6 +116,11 @@
     transition: opacity .3s ease;
 }
 
+.popup__item b {
+    font-weight: 600;
+    font-family: Klein, sans-serif !important;
+}
+
 .popup__item:hover {
     opacity: .8;
 }

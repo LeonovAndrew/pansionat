@@ -4,7 +4,7 @@ class ReviewMain extends CBitrixComponent
 {
     public function executeComponent()
     {
-        $obResult = \CIBlockElement::GetList([], ['ACTIVE' => 'Y', 'IBLOCK_ID' => 4, '!PROPERTY_EL_ID_VALUE' => ''], false, ['nPageSize' => $this->arParams['COUNT']], ['ID', '*', 'PROPERTY_*']);
+        $obResult = \CIBlockElement::GetList([], ['ACTIVE' => 'Y', 'IBLOCK_ID' => 4, '!PROPERTY_EL_ID_VALUE' => '', '>PROPERTY_OB_RATING' => 4], false, ['nPageSize' => $this->arParams['COUNT']], ['ID', '*', 'PROPERTY_*']);
 
         while ($obElement = $obResult->GetNextElement()) {
             $arFields = $obElement->GetFields();
