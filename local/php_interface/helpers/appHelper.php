@@ -99,7 +99,7 @@ class AppHelper
                 echo '<span class="rating-icon">' . self::showIcon('star-blank', true) . '</span>';
             }
         }
-        $ratingVal = round($procent / 100 * 5, 1);
+        $ratingVal = round((int)$procent / 100 * 5, 1);
         if (intval($numvotes) > 0) {
             if ($shor) {
                 echo '<span class="num-rating">' . $ratingVal . '</span>';

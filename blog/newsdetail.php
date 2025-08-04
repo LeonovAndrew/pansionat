@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("newdetail");
 		"IBLOCK_ID" => "3",
 		"IBLOCK_TYPE" => "pansionat",
 		"IBLOCK_URL" => "",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",

@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 
     <meta itemprop="name" content="Каталог пансионатов">
     <meta itemprop="description" content="Пансионаты для пожилых">
-    <meta itemprop="image" content="https://pansiont.pro/upload/iblock/663/6637a08955e5e8466040ad91f8360561.png">
+    <meta itemprop="image" content="https://pansionat.pro/upload/iblock/663/6637a08955e5e8466040ad91f8360561.png">
 
     <? foreach ($arResult['ITEMS'] as $key => $item): ?>
         <div class="pans" data-offer-id="<?= $item['ID'] ?>" itemprop="itemListElement" itemscope

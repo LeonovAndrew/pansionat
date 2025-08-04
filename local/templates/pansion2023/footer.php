@@ -1,31 +1,7 @@
-<?php
-use \Bitrix\Main\Config\Option;
-?>
 <?php if (!CSite::InDir('/index.php')): ?>
     </div>
 <?php endif; ?>
 <? $var = \DesperadoHelpers\AppHelper::getSiteDef(); ?>
-
-<section class="container deportament_section">
-    <div class="deportament_footer_wrap">
-        <div class="deportament_footer_items">
-            <a href="https://dszn.ru/deyatelnost/Socialnaya-integraciya-invalidov" target="_blank">
-                <img src="/local/templates/pansion2023/static/img/dep_tr.png" alt="Департамент труда и социальной защиты города Москва" class="deportament_footer_img">
-            </a>
-        </div>
-        <div class="deportament_footer_items">
-            <a href="https://www.rospotrebnadzor.ru/" target="_blank">
-                <img src="/local/templates/pansion2023/static/img/dep_zd.png" alt="Департамент здравоохранения города Москва" class="deportament_footer_img">
-            </a>
-        </div>
-        <div class="deportament_footer_items">
-            <a href="https://mosgorzdrav.ru/" target="_blank">
-                <img src="/local/templates/pansion2023/static/img/fed_nad.png" alt="Федеральная служба по надзору в сфере защиты прав потребителей и благополучия человека" class="deportament_footer_img">
-            </a>
-        </div>
-    </div>
-</section>
-
 <div class="footer__wrapper">
     <div class="container">
         <div class="footer">
@@ -54,7 +30,7 @@ use \Bitrix\Main\Config\Option;
                 <ul>
                     <!-- <li><a href="/about/">Контакты</a></li>-->
                     <li><a href="/kak-vybrat-pansionat/">Как выбрать пансионат</a></li>
-                    <li><a href="/news/">Новости и события</a></li>
+                    <li><a href="/blog/">Новости и события</a></li>
                     <li><a href="/about/">Обратная связь</a></li>
                     <li><a href="/faq/">Вопрос-ответ</a></li>
                     <li><a href="/addnew/">Добавить пансионат</a></li>
@@ -64,60 +40,60 @@ use \Bitrix\Main\Config\Option;
 
             <div class="footer__row __hide-mobile">
                 <div class="footer__title">Направления</div>
-                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", [
+                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", array(
                     "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
                     "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
                     "DELAY" => "N",    // Откладывать выполнение шаблона меню
                     "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                    "MENU_CACHE_GET_VARS" => [    // Значимые переменные запроса
+                    "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
                         0 => "",
-                    ],
+                    ),
                     "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
                     "MENU_CACHE_TYPE" => "N",    // Тип кеширования
                     "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
                     "ROOT_MENU_TYPE" => "footer1",    // Тип меню для первого уровня
                     "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                ],
+                ),
                     false
                 ); ?>
             </div>
 
             <div class="footer__row __hide-mobile">
                 <div class="footer__title">Каталог</div>
-                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", [
+                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", array(
                     "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
                     "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
                     "DELAY" => "N",    // Откладывать выполнение шаблона меню
                     "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                    "MENU_CACHE_GET_VARS" => [    // Значимые переменные запроса
+                    "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
                         0 => "",
-                    ],
+                    ),
                     "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
                     "MENU_CACHE_TYPE" => "N",    // Тип кеширования
                     "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
                     "ROOT_MENU_TYPE" => "footer2",    // Тип меню для первого уровня
                     "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                ],
+                ),
                     false
                 ); ?>
             </div>
 
             <div class="footer__row">
                 <div class="footer__title">По болезням</div>
-                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", [
+                <? $APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", array(
                     "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
                     "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
                     "DELAY" => "N",    // Откладывать выполнение шаблона меню
                     "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                    "MENU_CACHE_GET_VARS" => [    // Значимые переменные запроса
+                    "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
                         0 => "",
-                    ],
+                    ),
                     "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
                     "MENU_CACHE_TYPE" => "N",    // Тип кеширования
                     "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
                     "ROOT_MENU_TYPE" => "footer3",    // Тип меню для первого уровня
                     "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                ],
+                ),
                     false
                 ); ?>
             </div>
@@ -170,28 +146,6 @@ use \Bitrix\Main\Config\Option;
     </div>
 </div>
 
-<div class="popup">
-    <div class="popup__dialog">
-        <div class="popup__content">
-            <button class="popup-close">
-                &times;
-            </button>
-            <div class="popup__title">Выберите ваш город</div>
-            <div class="popup__grid">
-                <a href="/pansionaty-dlya-pozhilykh/"
-                   class="popup__item"><b>Москва</b></a>
-                <?php
-                $res = CIBlockSection::GetList(['NAME' => 'ASC'], ['SECTION_ID' => 159, 'ACTIVE' => 'Y'], false, ['ID', 'NAME', 'SECTION_PAGE_URL']);
-
-                while ($arItem = $res->GetNext()) { ?>
-                    <a href="<?php echo $arItem['SECTION_PAGE_URL']; ?>"
-                       class="popup__item"><?php echo $arItem['NAME']; ?></a>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="grey_wrapper">
 
 </div>
@@ -202,122 +156,108 @@ use \Bitrix\Main\Config\Option;
 >Стоимость проживания</span>
 
 
+
 <? $APPLICATION->IncludeComponent(
     "bitrix:main.include",
     "",
-    [
+    array(
         "AREA_FILE_SHOW" => "file",
         "AREA_FILE_SUFFIX" => "inc",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/cookie.php",
-    ]
+        "PATH" => SITE_TEMPLATE_PATH . "/include/cookie.php"
+    )
 ); ?>
-<?php if (stripos(@$_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false) : ?>
 
-<?php
-    $dopScripts = Option::get("grain.customsettings","scripts");
-    if(!empty($dopScripts) && $dopScripts !=''){
-        echo $dopScripts;
-    }
-    ?>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "inc",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/footer-counters.php"
+    )
+); ?>
 
-    <? $APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "",
-        [
-            "AREA_FILE_SHOW" => "file",
-            "AREA_FILE_SUFFIX" => "inc",
-            "EDIT_TEMPLATE" => "",
-            "PATH" => SITE_TEMPLATE_PATH . "/include/footer-counters.php",
-        ]
-    ); ?>
+<script data-skip-movinf="true" src="/local/templates/pansion2023/static/main.min.js?ts=<?= $ts ?>"></script>
 
-    <script data-skip-movinf="true" src="/local/templates/pansion2023/static/main.min.js?ts=<?= $ts ?>"></script>
-    <script data-skip-movinf="true"
-            src="/local/templates/pansion2023/static/vendor/lazyload.min.js?ts=<?= $ts ?>"></script>
 
-    <!-- Roistat Counter Start -->
-    <script>
-        (function (w, d, s, h, id) {
-            w.roistatProjectId = id;
-            w.roistatHost = h;
-            var p = d.location.protocol == "https:" ? "https://" : "http://";
-            var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/" + id + "/init?referrer=" + encodeURIComponent(d.location.href);
-            var js = d.createElement(s);
-            js.charset = "UTF-8";
-            js.async = 1;
-            js.src = p + h + u;
-            var js2 = d.getElementsByTagName(s)[0];
-            js2.parentNode.insertBefore(js, js2);
-        })(window, document, 'script', 'cloud.roistat.com', 'c77a940ca203e081b9eb8351beab46fb');
-    </script>
-    <!-- Roistat Counter End -->
+<!-- Roistat Counter Start -->
+<script>
+    (function(w, d, s, h, id) {
+        w.roistatProjectId = id; w.roistatHost = h;
+        var p = d.location.protocol == "https:" ? "https://" : "http://";
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+        var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+    })(window, document, 'script', 'cloud.roistat.com', 'c77a940ca203e081b9eb8351beab46fb');
+</script>
+<!-- Roistat Counter End -->
 
-    <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
-    <div class="js-whatsapp-message-container" style="display:none;">Отправьте, пожалуйста, данное сообщение и задайте
-        после него свой вопрос. Ваш номер обращения: {roistat_visit}
-    </div>
-    <script>
-        (function () {
-            if (window.roistat !== undefined) {
+
+<!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
+<div class="js-whatsapp-message-container" style="display:none;">Отправьте, пожалуйста, данное сообщение и задайте после него свой вопрос. Ваш номер обращения: {roistat_visit}</div>
+<script>
+    (function() {
+        if (window.roistat !== undefined) {
+            handler();
+        } else {
+            var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+            window.onRoistatAllModulesLoaded = function () {
+                if (pastCallback !== null) {
+                    pastCallback();
+                }
                 handler();
-            } else {
-                var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
-                window.onRoistatAllModulesLoaded = function () {
-                    if (pastCallback !== null) {
-                        pastCallback();
+            };
+        }
+
+        function handler() {
+            function init() {
+                appendMessageToLinks();
+
+                var delays = [1000, 5000, 15000];
+                setTimeout(function func(i) {
+                    if (i === undefined) {
+                        i = 0;
                     }
-                    handler();
-                };
+                    appendMessageToLinks();
+                    i++;
+                    if (typeof delays[i] !== 'undefined') {
+                        setTimeout(func, delays[i], i);
+                    }
+                }, delays[0]);
             }
 
-            function handler() {
-                function init() {
-                    appendMessageToLinks();
-                    var delays = [1000, 5000, 15000];
-                    setTimeout(function func(i) {
-                        if (i === undefined) {
-                            i = 0;
-                        }
-                        appendMessageToLinks();
-                        i++;
-                        if (typeof delays[i] !== 'undefined') {
-                            setTimeout(func, delays[i], i);
-                        }
-                    }, delays[0]);
-                }
-                function replaceQueryParam(url, param, value) {
-                    var explodedUrl = url.split('?');
-                    var baseUrl = explodedUrl[0] || '';
-                    var query = '?' + (explodedUrl[1] || '');
-                    var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-                    var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
-                    return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter + '&' : '?') + (value ? param + "=" + value : '');
-                }
+            function replaceQueryParam(url, param, value) {
+                var explodedUrl = url.split('?');
+                var baseUrl = explodedUrl[0] || '';
+                var query = '?' + (explodedUrl[1] || '');
+                var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+            }
 
-                function appendMessageToLinks() {
-                    var message = document.querySelector('.js-whatsapp-message-container').textContent;
-                    var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
-                    text = encodeURI(text);
-                    var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
-                    for (var elementKey in linkElements) {
-                        if (linkElements.hasOwnProperty(elementKey)) {
-                            var element = linkElements[elementKey];
-                            element.href = replaceQueryParam(element.href, 'text', text);
-                        }
+            function appendMessageToLinks() {
+                var message = document.querySelector('.js-whatsapp-message-container').textContent;
+                var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
+                text = encodeURI(text);
+                var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
+                for (var elementKey in linkElements) {
+                    if (linkElements.hasOwnProperty(elementKey)) {
+                        var element = linkElements[elementKey];
+                        element.href = replaceQueryParam(element.href, 'text', text);
                     }
                 }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        };
+    })();
+</script>
+<!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
 
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', init);
-                } else {
-                    init();
-                }
-            };
-        })();
-    </script>
-    <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
-<?php endif; ?>
-<a href="https://pansionaty-stavropol.ru" title="Пансионаты для пожилых Ставрополь" alt="Пансионаты Ставрополь"></a>
+ <a href="https://pansionaty-stavropol.ru" title="Пансионаты для пожилых Ставрополь" alt="Пансионаты Ставрополь"></a>
 </body>
 </html>

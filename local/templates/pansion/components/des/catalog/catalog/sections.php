@@ -1558,7 +1558,7 @@ $var = \DesperadoHelpers\AppHelper::getSiteDef();
 
 
     <div class="all_news_wrapper">
-        <a href="/news/" class="simple_button">Все новости</a>
+        <a href="/blog/" class="simple_button">Все новости</a>
     </div>
 
     <div class="index_form ">

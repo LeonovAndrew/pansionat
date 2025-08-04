@@ -379,3 +379,39 @@ function pre($array)
     print_r($array);
     echo '</pre>';
 }
+
+AddEventHandler("main", "OnBeforeProlog", "redirectOldBlogUrls");
+
+function redirectOldBlogUrls() {
+    // Проверяем, что мы не в админке
+    if (defined('ADMIN_SECTION') && ADMIN_SECTION === true) {
+        return;
+    }
+
+    $request = \Bitrix\Main\Context::getCurrent()->getRequest();
+    $requestUri = $request->getRequestUri();
+
+    // Проверяем URL на соответствие старой структуре (без /blog/)
+    if (preg_match('#^/([^/]+)/$#', $requestUri, $matches)) {
+        $elementCode = $matches[1];
+
+        // Проверяем существование элемента в инфоблоке 3
+        $element = \Bitrix\Iblock\ElementTable::getList([
+            'filter' => [
+                'IBLOCK_ID' => 3,
+                'CODE' => $elementCode,
+                'ACTIVE' => 'Y'
+            ],
+            'select' => ['ID', 'CODE']
+        ])->fetch();
+
+        if ($element) {
+            // Формируем новый URL
+            $newUrl = '/blog/' . $element['CODE'] . '/';
+
+            // Делаем 301 редирект
+            LocalRedirect($newUrl, true, '301 Moved Permanently');
+            exit;
+        }
+    }
+}

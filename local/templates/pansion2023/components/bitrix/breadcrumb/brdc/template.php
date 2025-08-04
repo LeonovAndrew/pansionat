@@ -1,51 +1,47 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 /**
  * @global CMain $APPLICATION
  */
-
 global $APPLICATION;
 
-//delayed function must return a string
-if(empty($arResult))
-	return "";
+if (empty($arResult))
+    return "";
 
 $strReturn = '';
 
-
-$strReturn .= '<div class="breadcrumb">';
+// Начало микроразметки BreadcrumbList
+$strReturn .= '<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
 $itemSize = count($arResult);
-for($index = 0; $index < $itemSize; $index++)
-{
-	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
-	$arSkip = array('Типы пансионатов','Пансионаты по болезням','Пансионаты по районам - пансионаты для пожилых',
-        'Сети пансионатов - пансионаты для пожилых и престарелых','Направления','Состояние','Города','Пансионаты Шоссе',
-        'Расположение','Пансионаты Сети пансионатов','Особенности');
+for ($index = 0; $index < $itemSize; $index++) {
+    $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
+    $arSkip = ['Типы пансионатов', 'Пансионаты по болезням', 'Пансионаты по районам - пансионаты для пожилых',
+        'Сети пансионатов - пансионаты для пожилых и престарелых', 'Направления', 'Состояние', 'Города', 'Пансионаты Шоссе',
+        'Расположение', 'Пансионаты Сети пансионатов', 'Особенности'];
 
-	if (in_array($title,$arSkip)) continue;
+    if (in_array($title, $arSkip)) continue;
 
-	$arrow = ($index > 0? ' > ' : '');
+    $arrow = ($index > 0 ? ' > ' : '');
 
-	if($arResult[$index]["LINK"] <> "" )
-	{
-		$strReturn .= '
-			<span class="breadcrumb-item" id="bx_breadcrumb_'.$index.'" >
-				'.$arrow.'
-				<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'">
-					<span>'.$title.'</span>
-				</a>
-			</span>';
-	}
-	else
-	{
-		$strReturn .= '
-			<span class="breadcrumb-item">
-				'.$arrow.'
-				<span>'.$title.'</span>
-			</span>';
-	}
+    if ($arResult[$index]["LINK"] <> "") {
+        $strReturn .= '
+            <span class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                ' . $arrow . '
+                <a href="' . $arResult[$index]["LINK"] . '" itemprop="item" title="' . $title . '">
+                    <span itemprop="name">' . $title . '</span>
+                </a>
+                <meta itemprop="position" content="' . ($index + 1) . '" />
+            </span>';
+    } else {
+        $strReturn .= '
+            <span class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                ' . $arrow . '
+                <span itemprop="name">' . $title . '</span>
+                <meta itemprop="position" content="' . ($index + 1) . '" />
+            </span>';
+    }
 }
 
 $strReturn .= '</div>';

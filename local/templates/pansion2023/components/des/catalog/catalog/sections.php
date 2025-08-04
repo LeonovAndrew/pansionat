@@ -26,7 +26,6 @@ $var = \DesperadoHelpers\AppHelper::getSiteDef();
 </div>
 
 
-
 <div class="block __small-margin">
     <div class="container">
 
@@ -35,24 +34,6 @@ $var = \DesperadoHelpers\AppHelper::getSiteDef();
             "",
             array()
         ); ?>
-
-    </div>
-</div>
-
-<div class="block __small-margin">
-    <div class="container">
-
-        <?php
-        $APPLICATION->IncludeComponent(
-            'des:yamap.placemarkers',
-            '',
-            [
-                'IBLOCK_ID' => 1, // ID инфоблока
-                'MAP_CENTER' => '55.751574, 37.573856', // Координаты центра карты
-                'CACHE_TIME' => 3600
-            ]
-        );
-        ?>
 
     </div>
 </div>
@@ -285,7 +266,7 @@ $var = \DesperadoHelpers\AppHelper::getSiteDef();
             false
         ); ?>
         <div class="news-button-wrapper">
-            <a href="/news/" class="all-news-button">Все статьи</a>
+            <a href="/blog/" class="all-news-button">Все статьи</a>
         </div>
     </div>
 </div>

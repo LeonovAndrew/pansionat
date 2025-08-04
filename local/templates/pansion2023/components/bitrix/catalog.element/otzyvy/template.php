@@ -273,7 +273,7 @@ $smallFile = CFile::ResizeImageGet(
             <div class="detail__reviews-panel-line">
                 <?
                 $val = $arResult['PROPERTIES']['SR_RATING_PLACE']['VALUE'];
-                $prc = $val / (5 / 100);
+                $prc = (int)$val / (5 / 100);
                 ?>
                 Расположение
                 <span><?= $val ?></span>
@@ -283,7 +283,7 @@ $smallFile = CFile::ResizeImageGet(
             <div class="detail__reviews-panel-line">
                 <?
                 $val = $arResult['PROPERTIES']['SR_RATING_OBSL']['VALUE'];
-                $prc = $val / (5 / 100);
+                $prc = (int)$val / (5 / 100);
                 ?>
                 Обслуживание
                 <span><?= $val ?></span>
@@ -293,7 +293,7 @@ $smallFile = CFile::ResizeImageGet(
             <div class="detail__reviews-panel-line">
                 <?
                 $val = $arResult['PROPERTIES']['SR_RATING_UYT']['VALUE'];
-                $prc = $val / (5 / 100);
+                $prc = (int)$val / (5 / 100);
                 ?>
                 Уют
                 <span><?= $val ?></span>
@@ -303,7 +303,7 @@ $smallFile = CFile::ResizeImageGet(
             <div class="detail__reviews-panel-line">
                 <?
                 $val = $arResult['PROPERTIES']['SR_RATING_KOMFORT']['VALUE'];
-                $prc = $val / (5 / 100);
+                $prc = (int)$val / (5 / 100);
                 ?>
                 Комфорт
                 <span><?= $val ?></span>
@@ -313,7 +313,7 @@ $smallFile = CFile::ResizeImageGet(
             <div class="detail__reviews-panel-line">
                 <?
                 $val = $arResult['PROPERTIES']['SR_RATING_LECH']['VALUE'];
-                $prc = $val / (5 / 100);
+                $prc = (int)$val / (5 / 100);
                 ?>
                 Лечение
                 <span><?= $val ?></span>

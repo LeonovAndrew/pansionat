@@ -1,7 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости");
-$APPLICATION->SetPageProperty('description', 'Новости. 400 пансионатов для пожилых в Pansionat.pro в Москве и Подмосковье. Адреса, телефоны и цены на размещение в пансионаты для пожилых людей.');
 ?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
@@ -44,7 +42,7 @@ $APPLICATION->SetPageProperty('description', 'Новости. 400 пансион
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => "round",
-		"PAGER_TITLE" => "Новости",
+		"PAGER_TITLE" => "Статьи и новости от ПансионатПро",
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
@@ -52,7 +50,7 @@ $APPLICATION->SetPageProperty('description', 'Новости. 400 пансион
 			0 => "",
 			1 => "",
 		),
-		"SET_BROWSER_TITLE" => "Y",
+		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
@@ -67,4 +65,9 @@ $APPLICATION->SetPageProperty('description', 'Новости. 400 пансион
 		"COMPONENT_TEMPLATE" => "news_list"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);
+
+$APPLICATION->SetTitle('Статьи и новости');
+$APPLICATION->SetPageProperty('title', 'Статьи и новости от ПансионатПро');
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

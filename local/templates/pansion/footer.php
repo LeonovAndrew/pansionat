@@ -28,7 +28,7 @@
 
                     <ul>
                        <!-- <li><a href="/about/">Контакты</a></li>-->
-                        <li><a href="/news/">Новости и события</a></li>
+                        <li><a href="/blog/">Новости и события</a></li>
                         <li><a href="/about/">Обратная связь</a></li>
                         <li><a href="/faq/">Вопрос-ответ</a></li>
                     </ul>
