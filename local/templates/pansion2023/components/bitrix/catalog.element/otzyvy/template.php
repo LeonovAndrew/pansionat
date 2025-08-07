@@ -21,8 +21,6 @@ $smallFile = CFile::ResizeImageGet(
     $arResult['PREVIEW_PICTURE'],
     array('width' => 200, 'height' => 200),
     BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true);
-
-
 ?>
 
 <div class="small-detail__wrapper">

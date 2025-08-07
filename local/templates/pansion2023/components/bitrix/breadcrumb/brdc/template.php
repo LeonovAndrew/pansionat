@@ -25,6 +25,23 @@ for ($index = 0; $index < $itemSize; $index++) {
 
     $arrow = ($index > 0 ? ' > ' : '');
 
+    if (empty($arResult[$index]["LINK"]) && !empty($arResult[$index + 1])) {
+        $res = CIBlockElement::GetList(
+            [],
+            [
+                "NAME" => $title,
+                "ACTIVE" => "Y",
+            ],
+            false,
+            false,
+            ["ID", "DETAIL_PAGE_URL"] // нужные поля
+        );
+
+        if ($element = $res->GetNext()) {
+            $arResult[$index]["LINK"] = $element["DETAIL_PAGE_URL"];
+        }
+    }
+
     if ($arResult[$index]["LINK"] <> "") {
         $strReturn .= '
             <span class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">

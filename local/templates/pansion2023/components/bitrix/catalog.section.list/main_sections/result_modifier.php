@@ -6,6 +6,10 @@
  * Time: 18:31
  */
 
+if (!empty($arParams['TAG'])) {
+    $arResult['SECTIONS'] = array_merge($arResult['SECTIONS'], $arParams['TAG']);
+}
+
 $rowIDX = 0;
 foreach ($arResult['SECTIONS'] as $item) {
     $arResult['GRID'][$rowIDX][] = $item;
